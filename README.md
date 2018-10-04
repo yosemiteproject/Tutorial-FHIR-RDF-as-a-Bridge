@@ -2,42 +2,17 @@
 
 ## Introduction
 This tutorial demonstrates how FHIR resources in RDF can be processed
-by a reasoner to determine if a given FHIR resource is an instance of
-a particular class.  In particular, a description logic (DL) reasoner
-infers that a particular FHIR DiagnosticReport of malignant neoplasm is
-an instance of CancerDiagnosis.  This type of analysis can be useful in
-primary and secondary care institutions to determine the overall number of
-patients that belong to a particular group of diagnoses, such as Cancer.
+by a reasoner to determine if a given FHIR resource is an instance of a
+particular class.  In particular, a FHIR DiagnosticReport for malignant
+neoplasm is inferred to be an instance of CancerDiagnosis by leveraging
+the SNOMED CT ontology.  This approach can be useful in primary and
+secondary care institutions to determine the number of patients
+that belong to a particular group of diagnoses, such as cancer.
 
-
-This tutorial is based on a [webinar presented by Harold R. Solbrig](http://yosemiteproject.org/fhir-rdf-as-a-bridge-to-the-semantic-web-in-healthcare/) of Mayo Clinic as part of Yosemite Project.
-
-</details>
-
-
-
-## Background
-<details>
-  <summary>
-    Show details
-  </summary>
-
-Ontologies that were designed independently almost always have some impedance mismatch when attempting to use them together. Many of the ontologies in the medical and life sciences domain are designed to capture facts about the world for research, such as the fact that the mitral valve is a kind of heart valve. But FHIR was designed to support the day-to-day operations of healthcare providers exchanging electronic health records (EHRs), and in this context the orientation has historically been different. When using FHIR/RDF with other ontologies, impedence differences are likely to show up in two main ways:
-
-* Records versus facts. FHIR is oriented toward recording who did what ("Dr. Jones diagnosed patient x with viral pneumonia") rather than stating absolute medical facts ("patient x has viral pneumonia").
-
-* Non-monotonicity. RDF was designed to be monotonic, whereas FHIR has a few design aspects that are would be non-monotonic if they were interpreted directly in RDF. (Monotonicity means that new data cannot invalidate previous conclusions; non-monotonicity means that previous conclusions can be invalidated by new data.) For example, a modifier extension indicates that the surrounding element's meaning will likely be misunderstood if the modifier extension is not understood.
-
-For both of these reasons, to maintain monotonicity in RDF, FHIR/RDF should not be directly interpreted as stating facts, at least until any potentially non-monotonic elements have been removed or isolated through pre-processing.
-
-Application developers should also be aware that some FHIR data attributes have a major impact on the interpretation of the enclosing data element: the meaning of the enclosing element cannot be determined in isolation. For example, a status of 'entered-in-error' means that the resource was created accidentally, and should be ignored ([source](https://www.hl7.org/fhir/linked-data-module.html)).
-
-</details>
-
+This tutorial is based on a [Yosemite Project webinar by Harold R. Solbrig of Mayo Clinic](http://yosemiteproject.org/fhir-rdf-as-a-bridge-to-the-semantic-web-in-healthcare/).
 
 ## Target audience
 * Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ontology.
-
 
 ## Prerequisites
 <details>
@@ -45,7 +20,7 @@ Application developers should also be aware that some FHIR data attributes have 
     Show details
   </summary>
   
-This tutorial assumes the reader has some background knowledge of the following technologies:
+This tutorial assumes the reader has some familiarity with the following technologies:
 
 * Semantic web technologies and standards
   * OWL, RDF
