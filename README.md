@@ -74,6 +74,7 @@ here for reference.  *(Click to show/hide)*
 * [catalog-v001.xml](catalog-v001.xml) -- XML catalog used by Protégé.  This causes all references to be resolved locally
 * [catalog-v001.backup.xml](catalog-v001.backup.xml) -- Backup copy of XML catalog as Protégé tends to scribble on these things if you so much
 as look at it crosseyed
+</details>
 
 
 ## Steps
@@ -92,4 +93,3 @@ as look at it crosseyed
 as an instance of thyroid disease.
 ![Class Hierarchy Tab](images/img2.png)
 
-</details>
