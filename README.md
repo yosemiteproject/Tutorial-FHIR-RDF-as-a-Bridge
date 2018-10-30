@@ -1,6 +1,5 @@
 # FHIR RDF as a Bridge to the Semantic Web in Healthcare
 
-## Introduction
 This tutorial demonstrates how FHIR resources in RDF can be processed
 by a reasoner to determine if a given FHIR resource is an instance of a
 particular class.  In particular, a FHIR DiagnosticReport for malignant
@@ -9,19 +8,14 @@ the SNOMED CT ontology.  This approach can be useful in primary and
 secondary care institutions to determine the number of patients
 that belong to a particular group of diagnoses, such as cancer.
 
-This tutorial is based on a [Yosemite Project webinar by Harold R. Solbrig of Mayo Clinic](http://yosemiteproject.org/fhir-rdf-as-a-bridge-to-the-semantic-web-in-healthcare/).
+This tutorial is based on a paper and Yosemite Project webinar by Harold R. Solbrig of Mayo Clinic.  See also:
+* [Recorded webinar](http://yosemiteproject.org/fhir-rdf-as-a-bridge-to-the-semantic-web-in-healthcare/).
+* [Slides from webinar](slides.pdf)
+* [Associated paper](http://www.swat4ls.org/wp-content/uploads/2017/11/SWAT4LS-2017_paper_28.pdf), from 2017 International SWAT4HCLS Conference
 
-## Target audience
-* Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ontology.
+**Target audience:** Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ontology.
 
-## Prerequisites
-<details>
-  <summary>
-    Show details
-  </summary>
-  
-This tutorial assumes the reader has some familiarity with the following technologies:
-
+**Prerequisites:** Familiarity with the following technologies:<br>
 * Semantic web technologies and standards
   * OWL, RDF
   * Protege ontology editor
@@ -29,22 +23,16 @@ This tutorial assumes the reader has some familiarity with the following technol
   * SNOMED CT
   * HL7 FHIR
   
-</details>
-  
-## Resources
 <details>
   <summary>
-    Show details
+    **File List**<br>
+These files will be downloaded automatically when you clone the 
+[BLENDINGFHIRandRDF](https://github.com/BD2KOnFHIR/BLENDINGFHIRandRDF) repository in step 2 below,
+so you do not need to download them individually.  They are listed
+here for reference.  *(Click to show/hide)*
   </summary>
 
-
-### Files
-
-* [Blending FHIR RDF and OWL](http://www.swat4ls.org/wp-content/uploads/2017/11/SWAT4LS-2017_paper_28.pdf)
-* [slides.pdf](slides.pdf) -- Presentation slides
-
-
-#### Classifiers
+#### Class definitions
 
 * [cancerreport.owl](cancerreport.owl) -- class definition for `DiagnosticReport` having a diagnosis of [346325008: Malignant neoplastic disease](http://snomed.info/id/346325008)
 * [patientreport.owl](patientreport.owl) -- class definition for `DiagnosticReport` whose subject is a reference to a fhir:Patient
@@ -53,14 +41,14 @@ This tutorial assumes the reader has some familiarity with the following technol
 * [fullreport.owl](fullreport.owl) -- class definition for a finalized `DiagnosticReport` on a patient with a cancer diagnosis
 * [thyroidreport.owl](thyroidreport.owl) -- class definition for `DiagnosticReport` having a diagnosis of [14304000: Disorder of thyroid gland (disorder)](http://snomed.info/id/14304000)
 
-#### Data
+#### Instance data
 
 * [diagnosticreport-example-f201-brainct.ttl](diagnosticreport-example-f201-brainct.ttl)
 * [diagnosticreport-example-thyroidtumor.ttl](diagnosticreport-example-thyroidtumor.ttl)
 * [imagingstudy-example-xr.ttl](imagingstudy-example-xr.ttl)
 * [imagingstudy-example-xr-mod.ttl](imagingstudy-example-xr_mod.ttl) -- Imaging study w/ sample laterailty transformation
 
-##### Ontologies and the like
+##### Ontologies / vocabularies
 
 * [codesystem-diagnostic-report-status.owl](codesystem-diagnostic-report-status.owl) -- proposed OWL representation of the `DiagnosticReport.status` code system
 * [fhir.ttl](fhir.ttl) -- FHIR Metadata vocabulary with offending `xsd:date`, `xsd:time`, `xsd:base64Binary` and `fhir:xhtml` data types changed to `xsd:dateTime` and `xsd:string`
@@ -81,20 +69,14 @@ This tutorial assumes the reader has some familiarity with the following technol
     see [SNOMED_CT directory](SNOMED_CT) for description of how this was generated
 	
 	
-#### Support
+#### Misc.
 
 * [catalog-v001.xml](catalog-v001.xml) -- XML catalog used by Protégé.  This causes all references to be resolved locally
 * [catalog-v001.backup.xml](catalog-v001.backup.xml) -- Backup copy of XML catalog as Protégé tends to scribble on these things if you so much
 as look at it crosseyed
-* README.md -- this file
 
-</details>
 
 ## Steps
-<details>
-  <summary>
-    Show details
-  </summary>
   
 1. Install a current version of [Protégé](https://protege.stanford.edu) (we use 5.1.0)
 2. Clone a copy of the [BLENDINGFHIRandRDF](https://github.com/BD2KOnFHIR/BLENDINGFHIRandRDF) repository
