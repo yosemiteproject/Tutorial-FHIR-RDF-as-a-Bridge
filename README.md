@@ -13,10 +13,11 @@ This tutorial is based on a paper and Yosemite Project webinar by Harold R. Solb
 * [Slides from webinar](slides.pdf)
 * [Paper from 2017 International SWAT4HCLS Conference](http://www.swat4ls.org/wp-content/uploads/2017/11/SWAT4LS-2017_paper_28.pdf)
 
-**Target audience:** Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ontology.
+#### Target audience
+Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ontology.
 
-**Prerequisites:** <br>
-* Familiarity with semantic web technologies and standards, including [OWL](http://www.w3.org/TR/owl-primer), [RDF](https://www.w3.org/TR/rdf11-primer/), and the [Protege ontology editor](https://protege.stanford.edu/)
+#### Prerequisites
+* Familiarity with semantic web technologies and standards, including [OWL](http://www.w3.org/TR/owl-primer), [RDF](https://www.w3.org/TR/rdf11-primer/), and the [Protégé ontology editor](https://protege.stanford.edu/)
 * Familiarity with health informatics standards, including [SNOMED CT](https://en.wikipedia.org/wiki/SNOMED_CT) and [HL7 FHIR](https://www.hl7.org/fhir/)
   
 #### File list (for reference)
