@@ -76,7 +76,7 @@ as look at it crosseyed
 
 ## Steps
   
-1. Install a current version of [Protégé](https://protege.stanford.edu) (we use 5.1.0)
+1. Install a current version of [Protégé](https://protege.stanford.edu) (we ed 5.1.0)
 2. Clone a copy of the [BLENDINGFHIRandRDF](https://github.com/BD2KOnFHIR/BLENDINGFHIRandRDF) repository
 3. Change to the yosemite_talk directory
 3. Start Protégé and open [fullreport.owl](fullreport.owl)
