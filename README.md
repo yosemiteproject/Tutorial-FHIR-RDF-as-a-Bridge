@@ -19,7 +19,7 @@ This tutorial is based on a paper and Yosemite Project webinar by Harold R. Solb
 * Familiarity with semantic web technologies and standards, including [OWL](http://www.w3.org/TR/owl-primer), [RDF](https://www.w3.org/TR/rdf11-primer/), and the [Protege ontology editor](https://protege.stanford.edu/)
 * Familiarity with health informatics standards, including [SNOMED CT](https://en.wikipedia.org/wiki/SNOMED_CT) and [HL7 FHIR](https://www.hl7.org/fhir/)
   
-**File list (for reference)**<br>
+#### File list (for reference)
 These files will be downloaded automatically when you clone the 
 [BLENDINGFHIRandRDF](https://github.com/BD2KOnFHIR/BLENDINGFHIRandRDF) repository in step 2 below,
 so you do not need to download them individually.
