@@ -9,28 +9,28 @@ secondary care institutions to determine the number of patients
 that belong to a particular group of diagnoses, such as cancer.
 
 This tutorial is based on a paper and Yosemite Project webinar by Harold R. Solbrig of Mayo Clinic.  See also:
-* [Recorded webinar](http://yosemiteproject.org/fhir-rdf-as-a-bridge-to-the-semantic-web-in-healthcare/).
+* [Recorded webinar](http://yosemiteproject.org/fhir-rdf-as-a-bridge-to-the-semantic-web-in-healthcare/)
 * [Slides from webinar](slides.pdf)
-* [Associated paper](http://www.swat4ls.org/wp-content/uploads/2017/11/SWAT4LS-2017_paper_28.pdf), from 2017 International SWAT4HCLS Conference
+* [Paper from 2017 International SWAT4HCLS Conference](http://www.swat4ls.org/wp-content/uploads/2017/11/SWAT4LS-2017_paper_28.pdf)
 
 **Target audience:** Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ontology.
 
-**Prerequisites:** Familiarity with the following technologies:<br>
-* Semantic web technologies and standards
+**Prerequisites:** <br>
+* Familiarity with semantic web technologies and standards
   * OWL, RDF
   * Protege ontology editor
-* Health informatics standards
+* Familiarity with health informatics standards
   * SNOMED CT
   * HL7 FHIR
   
+**File list (for reference)**<br>
 <details>
   <summary>
-    **File List**<br>
+*(Click to show/hide)*
+  </summary>
 These files will be downloaded automatically when you clone the 
 [BLENDINGFHIRandRDF](https://github.com/BD2KOnFHIR/BLENDINGFHIRandRDF) repository in step 2 below,
 so you do not need to download them individually.  They are listed
-here for reference.  *(Click to show/hide)*
-  </summary>
 
 #### Class definitions
 
