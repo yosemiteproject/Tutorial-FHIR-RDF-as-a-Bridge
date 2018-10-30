@@ -16,12 +16,8 @@ This tutorial is based on a paper and Yosemite Project webinar by Harold R. Solb
 **Target audience:** Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ontology.
 
 **Prerequisites:** <br>
-* Familiarity with semantic web technologies and standards
-  * OWL, RDF
-  * Protege ontology editor
-* Familiarity with health informatics standards
-  * SNOMED CT
-  * HL7 FHIR
+* Familiarity with semantic web technologies and standards, including [OWL](http://www.w3.org/TR/owl-primer), [RDF](https://www.w3.org/TR/rdf11-primer/), and the [Protege ontology editor](https://protege.stanford.edu/)
+* Familiarity with health informatics standards, including [SNOMED CT](https://en.wikipedia.org/wiki/SNOMED_CT) and [HL7 FHIR](https://www.hl7.org/fhir/)
   
 **File list (for reference)**<br>
 These files will be downloaded automatically when you clone the 
@@ -41,7 +37,7 @@ so you do not need to download them individually.
 * [fullreport.owl](fullreport.owl) -- class definition for a finalized `DiagnosticReport` on a patient with a cancer diagnosis
 * [thyroidreport.owl](thyroidreport.owl) -- class definition for `DiagnosticReport` having a diagnosis of [14304000: Disorder of thyroid gland (disorder)](http://snomed.info/id/14304000)
 
-#### Instance data
+##### Instance data
 
 * [diagnosticreport-example-f201-brainct.ttl](diagnosticreport-example-f201-brainct.ttl)
 * [diagnosticreport-example-thyroidtumor.ttl](diagnosticreport-example-thyroidtumor.ttl)
@@ -69,7 +65,7 @@ so you do not need to download them individually.
     see [SNOMED_CT directory](SNOMED_CT) for description of how this was generated
 	
 	
-#### Misc.
+##### Misc.
 
 * [catalog-v001.xml](catalog-v001.xml) -- XML catalog used by Protégé.  This causes all references to be resolved locally
 * [catalog-v001.backup.xml](catalog-v001.backup.xml) -- Backup copy of XML catalog as Protégé tends to scribble on these things if you so much
