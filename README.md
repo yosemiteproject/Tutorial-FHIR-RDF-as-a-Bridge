@@ -24,15 +24,15 @@ This tutorial is based on a paper and Yosemite Project webinar by Harold R. Solb
   * HL7 FHIR
   
 **File list (for reference)**<br>
-<details>
-  <summary>
-*(Click to show/hide)*
-  </summary>
 These files will be downloaded automatically when you clone the 
 [BLENDINGFHIRandRDF](https://github.com/BD2KOnFHIR/BLENDINGFHIRandRDF) repository in step 2 below,
-so you do not need to download them individually.  They are listed
+so you do not need to download them individually.
+<details>
+  <summary>
+*(Show/hide file list)*
+  </summary>
 
-#### Class definitions
+##### Class definitions
 
 * [cancerreport.owl](cancerreport.owl) -- class definition for `DiagnosticReport` having a diagnosis of [346325008: Malignant neoplastic disease](http://snomed.info/id/346325008)
 * [patientreport.owl](patientreport.owl) -- class definition for `DiagnosticReport` whose subject is a reference to a fhir:Patient
