@@ -79,7 +79,7 @@ as look at it crosseyed
 1. Install a current version of [Protege](https://protege.stanford.edu) (we used 5.1.0)
 2. Clone a copy of the [BLENDINGFHIRandRDF](https://github.com/BD2KOnFHIR/BLENDINGFHIRandRDF) repository
 3. Change to the yosemite_talk directory
-3. Start Protégé and open [fullreport.owl](fullreport.owl)
+3. Start Protege and open [fullreport.owl](fullreport.owl)
 4. Select the FaCT++ reasoner under the `Reasoner` menu
 5. Select `Start Reasoner` under the `Reasoner` menu
 6. Navigate to `FinalPatientReportWithCancerDiagnosis` in the `Class Hierarchy` tab and observe that `f201` (the id of the DiagnosticReport) has been recognized as an instance.
