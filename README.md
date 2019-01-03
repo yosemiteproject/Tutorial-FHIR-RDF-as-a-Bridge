@@ -26,7 +26,7 @@ These files will be downloaded automatically when you clone the
 so you do not need to download them individually.
 <details>
   <summary>
-*(Show/hide file list)*
+*Show/hide file list*
   </summary>
 
 ##### Class definitions
