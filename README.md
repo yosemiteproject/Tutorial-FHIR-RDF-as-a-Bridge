@@ -23,16 +23,35 @@ Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ont
 ## Steps
   
 1. Install a current version of [Protege](https://protege.stanford.edu) (we used 5.1.0)
+
 2. Clone a copy of the [BLENDINGFHIRandRDF](https://github.com/BD2KOnFHIR/BLENDINGFHIRandRDF) repository
+
+```
+mkdir someDirectoryOfYourChoice
+cd someDiretoryOfYourChoice
+git clone https://github.com/BD2KOnFHIR/BLENDINGFHIRandRDF.git
+```
+
 3. Change to the yosemite_talk directory
-3. Start Protege and open [fullreport.owl](fullreport.owl)
-4. Select the FaCT++ reasoner under the `Reasoner` menu
-5. Select `Start Reasoner` under the `Reasoner` menu
-6. Navigate to `FinalPatientReportWithCancerDiagnosis` in the `Class Hierarchy` tab and observe that `f201` (the id of the DiagnosticReport) has been recognized as an instance.
+
+```
+cd yosemite_talk
+```
+
+4. Start Protege and open [fullreport.owl](fullreport.owl)
+
+5. Select the FaCT++ reasoner under the `Reasoner` menu
+
+6. Select `Start Reasoner` under the `Reasoner` menu
+
+7. Navigate to `FinalPatientReportWithCancerDiagnosis` in the `Class Hierarchy` tab and observe that `f201` (the id of the DiagnosticReport) has been recognized as an instance.
 ![Class Hierarchy Tab](images/img1.png)
-7. Open [thyroidreport.owl](thyroidreport.owl), answering "no" to the current window prompt.
-8. Select `Start Reasoner` under the `Reasoner` menu.
-9. Navigate to `ReportOfThyroidDisease` in the `Class Hierarchy` tab and observe that `dxreport117` has been classified
+
+8. Open [thyroidreport.owl](thyroidreport.owl), answering "no" to the current window prompt.
+
+9. Select `Start Reasoner` under the `Reasoner` menu.
+
+10. Navigate to `ReportOfThyroidDisease` in the `Class Hierarchy` tab and observe that `dxreport117` has been classified
 as an instance of thyroid disease.
 ![Class Hierarchy Tab](images/img2.png)
 
