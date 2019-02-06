@@ -1,17 +1,18 @@
 # FHIR RDF as a Bridge to the Semantic Web in Healthcare
 
-This tutorial demonstrates how FHIR resources in RDF can be processed
-by a reasoner to determine if a given FHIR resource is an instance of a
-particular class.  In particular, a FHIR DiagnosticReport for malignant
-neoplasm is inferred to be an instance of CancerDiagnosis by leveraging
-the SNOMED CT ontology.  This approach can be useful in primary and
+This tutorial shows how FHIR medical records, represented in RDF, can be processed
+by a reasoner to identify particular diagnoses.  By leveraging the
+SNOMED CT ontology, a FHIR DiagnosticReport for malignant
+neoplasm is inferred to be an instance of CancerDiagnosis,
+even though the FHIR resource was not directly coded as
+a CancerDiagnosis.  This approach is useful in primary and
 secondary care institutions to determine the number of patients
 that belong to a particular group of diagnoses, such as cancer.
 
-This tutorial is based on a paper and Yosemite Project webinar by Harold R. Solbrig of Mayo Clinic.  See also:
-* [Recorded webinar](http://yosemiteproject.org/fhir-rdf-as-a-bridge-to-the-semantic-web-in-healthcare/)
-* [Slides from webinar](slides.pdf)
-* [Paper from 2017 International SWAT4HCLS Conference](http://www.swat4ls.org/wp-content/uploads/2017/11/SWAT4LS-2017_paper_28.pdf)
+This tutorial is based on a 
+[Yosemite Project webinar](http://yosemiteproject.org/fhir-rdf-as-a-bridge-to-the-semantic-web-in-healthcare/)
+and a [paper from the 2017 International SWAT4HCLS Conference](http://www.swat4ls.org/wp-content/uploads/2017/11/SWAT4LS-2017_paper_28.pdf)
+by Harold R. Solbrig of Mayo Clinic.  
 
 ## Target audience
 Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ontology.
@@ -22,36 +23,31 @@ Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ont
   
 ## Steps
   
-1. Install a current version of [Protege](https://protege.stanford.edu) (we used 5.1.0)
+1. Install a current version of [Protege](https://protege.stanford.edu/products.php) (we used 5.1.0)
 
-2. Clone a copy of the [BLENDINGFHIRandRDF](https://github.com/BD2KOnFHIR/BLENDINGFHIRandRDF) repository
-
-```
-mkdir someDirectoryOfYourChoice
-cd someDiretoryOfYourChoice
-git clone https://github.com/BD2KOnFHIR/BLENDINGFHIRandRDF.git
-```
-
-3. Change to the yosemite_talk directory
+2. Clone a copy of [this repository](https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge), which contains the files for this tutorial, and change to that directory.
 
 ```
-cd yosemite_talk
+git clone https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge
+cd Tutorial-FHIR-RDF-as-a-Bridge
 ```
 
-4. Start Protege and open [fullreport.owl](fullreport.owl)
+3. Start Protege verify that the FaCT++ reasoner is installed, by clickin the Reasoner menu, to see if FaCT++ is listed.  If not, install it directly from Protege: File-->Check for plugins..., check "FaCT++ reasoner", Install, then exit and restart Protege.
 
-5. Select the FaCT++ reasoner under the `Reasoner` menu
+3. Open [fullreport.owl](fullreport.owl): File-->Open
 
-6. Select `Start Reasoner` under the `Reasoner` menu
+4. Select the FaCT++ reasoner under the `Reasoner` menu
 
-7. Navigate to `FinalPatientReportWithCancerDiagnosis` in the `Class Hierarchy` tab and observe that `f201` (the id of the DiagnosticReport) has been recognized as an instance.
+5. Select `Start Reasoner` under the `Reasoner` menu
+
+6. Navigate to `FinalPatientReportWithCancerDiagnosis` in the `Classes`-->`Class hierarchy` tab and observe that `f201` (the id of the DiagnosticReport) has been recognized as an instance.
 ![Class Hierarchy Tab](images/img1.png)
 
-8. Open [thyroidreport.owl](thyroidreport.owl), answering "no" to the current window prompt.
+7. Open [thyroidreport.owl](thyroidreport.owl), answering "no" to the current window prompt.
 
-9. Select `Start Reasoner` under the `Reasoner` menu.
+8. Select `Start Reasoner` under the `Reasoner` menu.
 
-10. Navigate to `ReportOfThyroidDisease` in the `Class Hierarchy` tab and observe that `dxreport117` has been classified
+9. Navigate to `ReportOfThyroidDisease` in the `Class Hierarchy` tab and observe that `dxreport117` has been classified
 as an instance of thyroid disease.
 ![Class Hierarchy Tab](images/img2.png)
 
