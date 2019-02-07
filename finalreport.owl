@@ -7,15 +7,30 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 Prefix(sct:=<http://snomed.info/id/>)
 Prefix(sctm:=<http://snomed.info/sct/subset/>)
 Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
+
 Prefix(diagnostic-report-status:=<http://hl7.org/fhir/diagnostic-report-status/>)
 
 Prefix(:=<http://example.org/yosemite/finalreport/>)
 
 Ontology(<http://example.org/yosemite/finalreport>
-Import(<http://hl7.org/fhir/fhir.ttl>)
-Import(<http://hl7.org/fhir/diagnostic-report-status/>)
-Import(<http://hl7.org/fhir/DiagnosticReport/f201.ttl>)
 
+######################## Imports ###########################
+# To avoid version mismatches and 404s, we are using previously downloaded 
+# snapshots of imported files, instead of downloading the latest.
+
+# Use a saved snapshot instead of downloading from the web:
+# Import(<http://hl7.org/fhir/fhir.ttl>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/fhir.ttl>)
+
+# Use a saved snapshot instead of downloading from the web:
+# Import(<http://hl7.org/fhir/diagnostic-report-status/>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/codesystem-diagnostic-report-status.owl>)
+
+# Use a saved snapshot instead of downloading from the web:
+# Import(<http://hl7.org/fhir/DiagnosticReport/f201.ttl>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/diagnosticreport-example-f201-brainct.ttl>)
+
+######################## Target Report Type ###########################
 Declaration(Class(:FinalStatus))
 SubClassOf(diagnostic-report-status:final :FinalStatus)
 SubClassOf(diagnostic-report-status:amended :FinalStatus)

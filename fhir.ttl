@@ -4530,7 +4530,10 @@ fhir:Questionnaire.derivedFrom
 fhir:fhir.ttl  a        owl:Ontology ;
         rdfs:comment    "Formal model of FHIR Clinical Resources" ;
         rdfs:label      "FHIR Model Ontology" ;
-        owl:imports     w5: .
+	# To avoid version mismatches, import a previously downloaded snapshot 
+	# instead of importing the latest from the web:
+        # owl:imports     w5: .
+        owl:imports     <https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/w5.ttl> .
 
 fhir:TaskRestrictionComponent
         a                owl:Class ;

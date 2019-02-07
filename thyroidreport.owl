@@ -11,11 +11,32 @@ Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
 Prefix(:=<http://example.org/yosemite/thyroiddisease/>)
 
 Ontology(<http://example.org/yosemite/thyroiddisease>
-Import(<http://snomed.info/sct/900000000000207008thyroid_subset>)
-Import(<http://hl7.org/fhir/fhir.ttl>)
-Import(<http://hl7.org/fhir/DiagnosticReport/f201.ttl>)
-Import(<http://hl7.org/fhir/DiagnosticReport/dxreport117.ttl>)
 
+######################## Imports ###########################
+# To avoid version mismatches and 404s, we are using previously downloaded
+# snapshots of imported files, instead of downloading the latest.
+
+# Use a saved snapshot instead of downloading from the web:
+# Import(<http://snomed.info/sct/900000000000207008cancer_subset>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/snomed_cancer_subset.ttl>)
+
+# Use a saved snapshot instead of downloading from the web:
+# Import(<http://snomed.info/sct/900000000000207008thyroid_subset>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/snomed_thyroid_subset.ttl>)
+
+# Use a saved snapshot instead of downloading from the web:
+# Import(<http://hl7.org/fhir/fhir.ttl>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/fhir.ttl>)
+
+# Use a saved snapshot instead of downloading from the web:
+# Import(<http://hl7.org/fhir/DiagnosticReport/f201.ttl>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/diagnosticreport-example-f201-brainct.ttl>)
+
+# Use a saved snapshot instead of downloading from the web:
+# Import(<http://hl7.org/fhir/DiagnosticReport/dxreport117.ttl>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/diagnosticreport-example-thyroidtumor.ttl>)
+
+######################## Target Diagnosis ###########################
 # Classifier Example -- Dx of Thyroid disease
 Declaration(ObjectProperty(fhir:DiagnosticReport.codedDiagnosis.coding))
 SubObjectPropertyOf(

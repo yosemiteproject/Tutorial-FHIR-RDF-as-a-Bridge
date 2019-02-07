@@ -9,14 +9,27 @@ Prefix(sctm:=<http://snomed.info/sct/subset/>)
 Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
 
 Prefix(:=<http://example.org/yosemite/cancerreport/>)
+Ontology(<http://example.org/yosemite/cancerreport/>)
 
-Ontology(<http://example.org/yosemite/cancerreport>
-Import(<http://snomed.info/sct/900000000000207008cancer_subset>)
-Import(<http://hl7.org/fhir/fhir.ttl>)
-Import(<http://hl7.org/fhir/DiagnosticReport/f201.ttl>)
+######################## Imports ###########################
+# To avoid version mismatches and 404s, we are using previously downloaded 
+# snapshots of imported files, instead of downloading the latest.
 
-# Classifier Example -- DiagnosticReports the have codes for malignant neoplastic disease
-# Property chan for the actual coding
+# Use a saved snapshot instead of downloading from the web:
+# Import(<http://snomed.info/sct/900000000000207008cancer_subset>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/snomed_cancer_subset.ttl>)
+
+# Use a saved snapshot instead of downloading from the web:
+# Import(<http://hl7.org/fhir/fhir.ttl>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/fhir.ttl>)
+
+# Use a saved snapshot instead of downloading from the web:
+# Import(<http://hl7.org/fhir/DiagnosticReport/f201.ttl>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/diagnosticreport-example-f201-brainct.ttl>)
+
+######################## Target Diagnosis ###########################
+# Classifier Example -- DiagnosticReports have the codes for malignant neoplastic disease
+# Property chain for the actual coding
 Declaration(ObjectProperty(fhir:DiagnosticReport.codedDiagnosis.coding))
 SubObjectPropertyOf(
   ObjectPropertyChain(fhir:DiagnosticReport.codedDiagnosis fhir:CodeableConcept.coding) fhir:DiagnosticReport.codedDiagnosis.coding)
