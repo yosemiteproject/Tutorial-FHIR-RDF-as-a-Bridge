@@ -10,7 +10,7 @@ Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
 
 Prefix(:=<http://example.org/yosemite/finalreport/>)
 
-Ontology(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/finalreport_data.ofn>
+Ontology(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/finalreport_data.ofn>
 
 ######################## Imports ###########################
 # To avoid version mismatches and 404s, we are using previously downloaded
@@ -18,11 +18,11 @@ Ontology(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as
 
 # Use a saved snapshot instead of downloading from the web:
 # Import(<http://hl7.org/fhir/fhir.ttl>)
-Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/fhir.ttl>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/fhir.ttl>)
 
 # Use a saved snapshot instead of downloading from the web:
 # Import(<http://hl7.org/fhir/DiagnosticReport/f201.ttl>)
-Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/diagnosticreport-example-f201-brainct.ttl>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/diagnosticreport-example-f201-brainct.ttl>)
 
 ######################## Target Report Type ###########################
 Declaration(Class(:FinalizedReport))

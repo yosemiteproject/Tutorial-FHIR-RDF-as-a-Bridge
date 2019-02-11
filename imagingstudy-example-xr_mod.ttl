@@ -169,8 +169,8 @@
 
 # Modified to use previously downloaded snapshot instead of downloading
 # the latest, to avoid version mismatch and 404s:
-<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/imagingstudy-example-xr.ttl> a owl:Ontology;
-  owl:imports <https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/fhir.ttl> ;
+<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/imagingstudy-example-xr.ttl> a owl:Ontology;
+  owl:imports <https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/fhir.ttl> ;
   owl:versionIRI <http://build.fhir.org/ImagingStudy/example-xr.ttl> .
 
 # -------------------------------------------------------------------------------------

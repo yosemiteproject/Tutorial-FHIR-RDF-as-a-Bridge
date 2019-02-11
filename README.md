@@ -32,11 +32,11 @@ Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ont
   
 1. Install a current version of [Protege](https://protege.stanford.edu/products.php) (We tested this tutorial on 5.1.0 and 5.5.0beta7.)
 
-2. Clone a copy of [this repository](https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge), which contains the files for this tutorial, and change to that directory.
+2. Clone a copy of [this repository](https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master), which contains the files for this tutorial, and change to that directory.
 
 ```
-git clone https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge
-cd Tutorial-FHIR-RDF-as-a-Bridge
+git clone https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master
+cd Tutorial-FHIR-RDF-as-a-Bridge/master
 ```
 
 3. Start Protege.  If you get an "Automatic Update" dialog, you may dismiss it

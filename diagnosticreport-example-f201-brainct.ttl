@@ -77,8 +77,8 @@
 
 # Import from saved snapshots instead of downloading the latest version,
 # to avoid version mismatch and 404s:
-<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/diagnosticreport-example-f201-brainct.ttl> a owl:Ontology;
-  owl:imports <https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/fhir.ttl> .
+<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/diagnosticreport-example-f201-brainct.ttl> a owl:Ontology;
+  owl:imports <https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/fhir.ttl> .
 
 # -------------------------------------------------------------------------------------
 
