@@ -4529,13 +4529,13 @@ fhir:Questionnaire.derivedFrom
 
 # Modified to use previously downloaded snapshot instead of downloading
 # the latest, in order to avoid version mismatch and 404s:
-<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/fhir.ttl>  a        owl:Ontology ;
+<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/Tutorial-FHIR-RDF-as-a-Bridge/fhir.ttl>  a        owl:Ontology ;
         rdfs:comment    "Formal model of FHIR Clinical Resources" ;
         rdfs:label      "FHIR Model Ontology" ;
 	# To avoid version mismatches, import a previously downloaded snapshot 
 	# instead of importing the latest from the web:
         # owl:imports     w5: .
-        owl:imports     <file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/w5.ttl> .
+        owl:imports     <https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/Tutorial-FHIR-RDF-as-a-Bridge/w5.ttl> .
 
 fhir:TaskRestrictionComponent
         a                owl:Class ;
