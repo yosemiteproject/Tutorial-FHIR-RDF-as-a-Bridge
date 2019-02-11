@@ -10,7 +10,7 @@ Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
 
 Prefix(:=<http://example.org/yosemite/fullreport/>)
 
-Ontology(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/Tutorial-FHIR-RDF-as-a-Bridge/fullreport.ofn>
+Ontology(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/fullreport.ofn>
 
 ######################## Imports ###########################
 # To avoid version mismatches and 404s, we are using previously downloaded
@@ -18,19 +18,19 @@ Ontology(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as
 
 # Use a saved snapshot instead of downloading from the web:
 # Import(<http://snomed.info/sct/900000000000207008cancer_subset>)
-Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/Tutorial-FHIR-RDF-as-a-Bridge/snomed_cancer_subset.ttl>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/snomed_cancer_subset.ttl>)
 
 # Use a saved snapshot instead of downloading from the web:
 # Import(<http://hl7.org/fhir/fhir.ttl>)
-Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/Tutorial-FHIR-RDF-as-a-Bridge/fhir.ttl>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/fhir.ttl>)
 
 # Use a saved snapshot instead of downloading from the web:
 # Import(<http://hl7.org/fhir/DiagnosticReport/f201.ttl>)
-Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/Tutorial-FHIR-RDF-as-a-Bridge/diagnosticreport-example-f201-brainct.ttl>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/diagnosticreport-example-f201-brainct.ttl>)
 
-Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/Tutorial-FHIR-RDF-as-a-Bridge/patientreport.ofn>)
-Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/Tutorial-FHIR-RDF-as-a-Bridge/cancerreport.ofn>)
-Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/Tutorial-FHIR-RDF-as-a-Bridge/finalreport.ofn>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/patientreport.ofn>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/cancerreport.ofn>)
+Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/finalreport.ofn>)
 
 ######################## Target Diagnosis ###########################
 Declaration(Class(:FinalPatientReportWithCancerDiagnosis))
@@ -38,8 +38,8 @@ AnnotationAssertion(dc:title :FinalPatientReportWithCancerDiagnosis
                   "The set of diagnoses that are instances of malignant neoplastic disease (sct:363346000)")
 EquivalentClasses(:FinalPatientReportWithCancerDiagnosis
 	ObjectIntersectionOf
-	(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/Tutorial-FHIR-RDF-as-a-Bridge/patientreport/PatientReport>
-	 <https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/Tutorial-FHIR-RDF-as-a-Bridge/cancerreport/ReportWithCancerDiagnosis>
-	 <https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/Tutorial-FHIR-RDF-as-a-Bridge/finalreport/FinalReport>))
+	(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/patientreport/PatientReport>
+	 <https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/cancerreport/ReportWithCancerDiagnosis>
+	 <https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/finalreport/FinalReport>))
 
 )
