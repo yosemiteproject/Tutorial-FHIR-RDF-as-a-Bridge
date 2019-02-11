@@ -164,8 +164,10 @@
 
 # - ontology header ------------------------------------------------------------
 
-<http://hl7.org/fhir/ImagingStudy/example-xr.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl;
+# Modified to use previously downloaded snapshot instead of downloading
+# the latest, to avoid version mismatch and 404s:
+<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/imagingstudy-example-xr.ttl> a owl:Ontology;
+  owl:imports <file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/fhir.ttl> ;
   owl:versionIRI <http://build.fhir.org/ImagingStudy/example-xr.ttl> .
 
 # -------------------------------------------------------------------------------------

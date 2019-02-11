@@ -75,8 +75,10 @@
 
 # - ontology header ------------------------------------------------------------
 
-<http://hl7.org/fhir/DiagnosticReport/f201.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl.
+# Import from saved snapshots instead of downloading the latest version,
+# to avoid version mismatch and 404s:
+<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/diagnosticreport-example-f201-brainct.ttl> a owl:Ontology;
+  owl:imports <file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/fhir.ttl> .
 
 # -------------------------------------------------------------------------------------
 
