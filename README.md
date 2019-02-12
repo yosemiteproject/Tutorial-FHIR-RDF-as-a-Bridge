@@ -1,20 +1,20 @@
 # FHIR RDF as a Bridge to the Semantic Web in Healthcare
 
-This tutorial shows how FHIR medical records, represented in RDF, can be processed
+This tutorial shows how FHIR RDF medical records using SNOMED-CT can be processed
 by a reasoner to identify diagnoses that were not directly coded.  Two
-examples are demonstrated.  Leveraging the
-SNOMED CT ontology, a FHIR DiagnosticReport for malignant
+examples are demonstrated:
+a FHIR DiagnosticReport for malignant
 neoplasm is inferred to be an instance of CancerDiagnosis; and
 a report of a thyroid tumor is inferred to be a thyroid disease diagnosis.
 
 This approach is useful in primary and
-secondary care institutions to determine the number of patients
+secondary care institutions to count or identify patients
 that belong to a particular group of diagnoses.
-Instead of explicitly querying for every possible kind of report
+Instead of explicitly querying for every possible code
 that would indicate the target diagnosis -- such as cancer or thyroid 
 disease -- 
-the reasoner uses SNOMED CT's ontology to infer that diagnosis based
-on its subclass relationships.
+the reasoner uses SNOMED-CT's ontology to infer that diagnosis based
+on subclass relationships.
 
 This tutorial is based on a 
 [Yosemite Project webinar](http://yosemiteproject.org/fhir-rdf-as-a-bridge-to-the-semantic-web-in-healthcare/)
@@ -26,11 +26,11 @@ Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ont
 
 ## Prerequisites
 * Familiarity with semantic web technologies and standards, including [OWL](http://www.w3.org/TR/owl-primer), [RDF](https://www.w3.org/TR/rdf11-primer/), and the [Protege ontology editor](https://protege.stanford.edu/)
-* Familiarity with health informatics standards, including [SNOMED CT](https://en.wikipedia.org/wiki/SNOMED_CT) and [HL7 FHIR](https://www.hl7.org/fhir/)
+* Familiarity with health informatics standards, including [SNOMED-CT](https://en.wikipedia.org/wiki/SNOMED_CT) and [HL7 FHIR](https://www.hl7.org/fhir/)
   
 ## Steps
   
-1. Install a current version of [Protege](https://protege.stanford.edu/products.php) (We tested this tutorial on 5.1.0 and 5.5.0beta7.)
+1. Install a current version of [Protege](https://protege.stanford.edu/products.php) This tutorial has been tested on 5.1.0 and 5.5.0beta8.
 
 2. Clone a copy of [this repository](https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master), which contains the files for this tutorial, and change to that directory.
 
@@ -49,7 +49,7 @@ by clicking "Not now".
 5. Open [fullreport.ofn](fullreport.ofn): File-->Open.
 This OWL file references a sample FHIR/RDF patient data record (f201.ttl)
 that we will identify as a cancer diagnosis, using the FaCT++ reasoner.  
-It also references the various FHIR and SNOMED CT ontology pieces that enable 
+It also references the various FHIR and SNOMED-CT ontology pieces that enable 
 the reasoner to reach this conclusion.
 ![Protege after successfully opening fullreport.ofn](images/protege-after-resolving-imports.png)
 
@@ -118,7 +118,7 @@ cancer or thyroid disease.
 * [imagingstudy-example-xr-mod.ttl](imagingstudy-example-xr_mod.ttl) -- Imaging study with sample laterality transformation
 
 ### Ontologies / vocabularies
-These are standard SNOMED CT and FHIR ontologies/vocabularies that we
+These are standard SNOMED-CT and FHIR ontologies/vocabularies that we
 have downloaded for use in this analysis.
 
 * [codesystem-diagnostic-report-status.ttl](codesystem-diagnostic-report-status.ttl) -- proposed OWL representation of the `DiagnosticReport.status` code system
