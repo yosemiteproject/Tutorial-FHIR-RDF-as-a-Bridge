@@ -37,10 +37,15 @@ Declaration(Class(:FinalPatientReportWithCancerDiagnosis))
 AnnotationAssertion(dc:title :FinalPatientReportWithCancerDiagnosis 
                   "The set of diagnoses that are instances of malignant neoplastic disease (sct:363346000)")
 EquivalentClasses( :FinalPatientReportWithCancerDiagnosis
-	ObjectIntersectionOf (
-		:PatientReport 
-		:ReportWithCancerDiagnosis
-		:FinalReport 
+	ObjectIntersectionOf
+       (
+	:PatientReport 
+	# <file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/PatientReport>
+	:ReportWithCancerDiagnosis
+        # <file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/ReportWithCancerDiagnosis>
+	:FinalReport 
+        # <file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/FinalReport>
 	))
+
 
 )
