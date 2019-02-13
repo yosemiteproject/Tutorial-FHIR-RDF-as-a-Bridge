@@ -41,6 +41,7 @@ cd Tutorial-FHIR-RDF-as-a-Bridge/master
 
 3. Start Protege.  If you get an "Automatic Update" dialog, you may dismiss it
 by clicking "Not now".
+![Protege](images/automatic-update.png)
 ![Protege](images/protege.png)
 
 4. Verify that the FaCT++ reasoner is installed: click the Reasoner menu to see if FaCT++ is listed.  If not, install it directly from Protege: File-->Check for plugins..., check "FaCT++ reasoner", Install, then exit and restart Protege.
@@ -51,9 +52,8 @@ This OWL file references a sample FHIR/RDF patient data record (f201.ttl)
 that we will identify as a cancer diagnosis, using the FaCT++ reasoner.  
 It also references the various FHIR and SNOMED-CT ontology pieces that enable 
 the reasoner to reach this conclusion.
-![Protege after successfully opening fullreport.ofn](images/protege-after-resolving-imports.png)
 
-6. If needed, resolve missing imports using the files in this directory:
+If needed, resolve missing imports using these files:
 ```
 snomed_cancer_subset.ttl
 fhir.ttl
@@ -64,6 +64,7 @@ finalreport.ofn
 ```
 ![Missing import](images/missing-import-cancer-subset.png)
 ![File selection for missing import](images/cancer-subset.png)
+![Protege after successfully opening fullreport.ofn](images/protege-after-resolving-imports.png)
 
 6. Select the FaCT++ reasoner under the `Reasoner` menu.
 ![Select FaCT++](images/select-factpp-reasoner.png)
@@ -73,10 +74,19 @@ seconds to run on a 3.4GHz laptop.
 ![Start reasoner](images/start-reasoner.png)
 ![Reasoner progress](images/reasoner-progress.png)
 
-8. Navigate to `FinalPatientReportWithCancerDiagnosis` in the `Classes`-->`Class hierarchy` tab and observe that `f201` (the id of the DiagnosticReport) has been recognized as an instance.
+8. Navigate to `FinalPatientReportWithCancerDiagnosis` in the `Classes`-->`Class hierarchy` tab and observe that `f201` (the id of the DiagnosticReport) has been recognized as an instance.  Success!
+This means that the reasoner has concluded that this patient record (f201)
+has a cancer diagnosis.
 ![Class Hierarchy Tab](images/f201-inferred.png)
 
+Next, we will test a different patient record for a thyroid disease diagnosis.
+
 9. Open [thyroidreport.ofn](thyroidreport.ofn), answering "no" to the current window prompt.
+Again, this file imports the ontologies that we need, imports the patient
+record that will be tested (diagnosticreport-example-dxreport117-thyroidtumor.ttl),
+and defines our target diagnosis class (:ReportOfThyroidDisease)
+as being anything classified in SNOMED-CT as a
+disorder of the thyroid gland (code sct:14304000).
 ![Class Hierarchy Tab](images/open-thyroid.png)
 
 10. Select `Start Reasoner` under the `Reasoner` menu.  It may take ~2 minutes
@@ -87,14 +97,10 @@ to run on a 3.4GHz laptop.
 as an instance of thyroid disease.
 ![Class Hierarchy Tab](images/dxreport117-inferred.png)
 
-## File list (for reference)
+## How it works
 To further understand how this demo works, examine the roles and contents of
-the files listed below.  These files are included when you clone the 
-[BLENDINGFHIRandRDF](https://github.com/BD2KOnFHIR/BLENDINGFHIRandRDF) repository in step 2 above.
-<details>
-  <summary>
-<i>Show/hide file list</i>
-  </summary>
+the files listed below.  These files were included when you cloned the 
+repository in step 2 above.
 
 ### Class definitions
 These files specify the kinds of diagnoses that we wish to identify,
@@ -119,11 +125,13 @@ cancer or thyroid disease.
 
 ### Ontologies / vocabularies
 These are standard SNOMED-CT and FHIR ontologies/vocabularies that we
-have downloaded for use in this analysis.
+have downloaded for use in this analysis.   Ideally these ontologies
+should be usable as-is.  However, as of this writing there are some
+exceptions, as described below.
 
-* [codesystem-diagnostic-report-status.ttl](codesystem-diagnostic-report-status.ttl) -- proposed OWL representation of the `DiagnosticReport.status` code system
+* [codesystem-diagnostic-report-status.ttl](codesystem-diagnostic-report-status.ttl) -- proposed OWL representation of the `DiagnosticReport.status` code system.  This mini-ontology has not yet been standardized, but (as of this writing) the [FHIR/RDF group](http://wiki.hl7.org/index.php?title=ITS_RDF_ConCall_Agenda) is working toward generating it from the FHIR specification [build process](http://wiki.hl7.org/index.php?title=FHIR_Build_Process) as a standard downloadable ontology.
 * [fhir.ttl](fhir.ttl) -- FHIR Metadata vocabulary with offending `xsd:date`, `xsd:time`, `xsd:base64Binary` and `fhir:xhtml` data types changed to `xsd:dateTime` and `xsd:string`
-* [w5.ttl](w5.ttl) -- local copy of the FHIR 5 W's ontology
+* [w5.ttl](w5.ttl) -- local copy of the FHIR 5 W's ontology -- [Who, What, When, Where, Why](https://www.hl7.org/fhir/fivews.html)
 * [snomed_cancer_subset.ttl](snomed_cancer_subset.ttl) -- an OWL representation of the transitive closure and neighborhood of concepts:
   * [18834000: Malignant tumor if craniopharyngeal duct (disorder)](http://snomed.info/id/188340000)
   * [394914008: Radiology - speciality (qualifier value)](http://snomed.info/id/394914008)
@@ -146,6 +154,5 @@ These files are generated by Protege.
 * [catalog-v001.xml](catalog-v001.xml) -- XML catalog used by Protege.  This causes all references to be resolved locally
 * [catalog-v001.backup.xml](catalog-v001.backup.xml) -- Backup copy of XML catalog as Protege tends to scribble on these things if you so much
 as look at it crosseyed
-</details>
 
 
