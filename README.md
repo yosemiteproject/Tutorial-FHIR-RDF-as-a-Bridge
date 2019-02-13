@@ -30,7 +30,7 @@ Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ont
   
 ## Steps
   
-1. Install a current version of [Protege](https://protege.stanford.edu/products.php) This tutorial has been tested on 5.1.0 and 5.5.0beta8.
+1. Install a current version of [Protege](https://protege.stanford.edu/products.php).  This tutorial was tested on 5.5.0beta8 and 5.5.0beta9.
 
 2. Clone a copy of [this repository](https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master), which contains the files for this tutorial, and change to that directory.
 
@@ -53,7 +53,7 @@ that we will identify as a cancer diagnosis, using the FaCT++ reasoner.
 It also references the various FHIR and SNOMED-CT ontology pieces that enable 
 the reasoner to reach this conclusion.
 
-If needed, resolve missing imports using these files:
+If needed, resolve missing imports using these local files:
 ```
 snomed_cancer_subset.ttl
 fhir.ttl

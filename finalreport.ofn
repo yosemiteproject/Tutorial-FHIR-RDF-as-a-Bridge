@@ -10,9 +10,9 @@ Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
 
 Prefix(diagnostic-report-status:=<http://hl7.org/fhir/diagnostic-report-status/>)
 
-Prefix(:=<http://example.org/yosemite/finalreport/>)
+Prefix(:=<http://example.org/yosemite/>)
 
-Ontology(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/finalreport.ofn>
+Ontology(<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/finalreport.ofn>
 
 ######################## Imports ###########################
 # To avoid version mismatches and 404s, we are using previously downloaded 
@@ -20,15 +20,15 @@ Ontology(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as
 
 # Use a saved snapshot instead of downloading from the web:
 # Import(<http://hl7.org/fhir/fhir.ttl>)
-Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/fhir.ttl>)
+Import(<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/fhir.ttl>)
 
 # Use a saved snapshot instead of downloading from the web:
 # Import(<http://hl7.org/fhir/diagnostic-report-status/>)
-Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/codesystem-diagnostic-report-status.ttl>)
+Import(<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/codesystem-diagnostic-report-status.ttl>)
 
 # Use a saved snapshot instead of downloading from the web:
 # Import(<http://hl7.org/fhir/DiagnosticReport/f201.ttl>)
-Import(<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/diagnosticreport-example-f201-brainct.ttl>)
+Import(<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/diagnosticreport-example-f201-brainct.ttl>)
 
 ######################## Target Report Type ###########################
 Declaration(Class(:FinalStatus))
