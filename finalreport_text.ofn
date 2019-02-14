@@ -10,7 +10,7 @@ Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
 
 Prefix(:=<http://example.org/yosemite/>)
 
-Ontology(<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/finalreport_data.ofn>
+Ontology(<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/finalreport_text.ofn>
 
 ######################## Imports ###########################
 # To avoid version mismatches and 404s, we are using previously downloaded
@@ -25,8 +25,8 @@ Import(<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUME
 Import(<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/diagnosticreport-example-f201-brainct.ttl>)
 
 ######################## Target Report Type ###########################
-Declaration(Class(:FinalizedReport))
-EquivalentClasses(:FinalizedReport ObjectSomeValuesFrom
+Declaration(Class(:FinalReport))
+EquivalentClasses(:FinalReport ObjectSomeValuesFrom
   (fhir:DiagnosticReport.status DataSomeValuesFrom
     (fhir:value DataOneOf("amended" "appended" "corrected" "final"))))
 )

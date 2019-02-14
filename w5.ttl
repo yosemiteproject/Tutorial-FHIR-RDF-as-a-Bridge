@@ -33,13 +33,6 @@ w5:when.planned  a          owl:ObjectProperty ;
         rdfs:label          "when.planned" ;
         rdfs:subPropertyOf  w5:when .
 
-# Modified to use a previously downloaded snapshot instead of downloading
-# the latest, to avoid version mismatch and 404s:
-# w5:     a                owl:Ontology ;
-<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/w5.ttl>     a                owl:Ontology ;
-        rdfs:comment     "FHIR W5 categorization is a preliminary classification of the fhir property" ;
-        rdfs:label       "W5 Categorization" .
-
 w5:infrastructure.structure
         a                owl:Class ;
         rdfs:label       "structure" ;
@@ -98,6 +91,12 @@ w5:clinical.medication
 w5:why  a             owl:ObjectProperty ;
         rdfs:comment  "Why this work was done" ;
         rdfs:label    "why" .
+
+fhir:w5.ttl  a           owl:Ontology ;
+        rdfs:comment     "FHIR W5 categorization is a preliminary classification of the fhir property" ;
+        rdfs:label       "W5 Categorization" ;
+        owl:versionIRI   "http://build.fhir.org/w5.ttl" ;
+        owl:versionInfo  "FHIR W5 categorization (Preliminary)" .
 
 w5:conformance.misc  a   owl:Class ;
         rdfs:label       "misc" ;

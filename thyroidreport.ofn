@@ -38,14 +38,14 @@ Import(<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUME
 
 ######################## Target Diagnosis ###########################
 # Classifier Example -- Dx of Thyroid disease
-Declaration(ObjectProperty(fhir:DiagnosticReport.codedDiagnosis.coding))
+Declaration(ObjectProperty(fhir:DiagnosticReport.conclusionCode.coding))
 SubObjectPropertyOf(
-  ObjectPropertyChain(fhir:DiagnosticReport.codedDiagnosis fhir:CodeableConcept.coding) fhir:DiagnosticReport.codedDiagnosis.coding)
+  ObjectPropertyChain(fhir:DiagnosticReport.conclusionCode fhir:CodeableConcept.coding) fhir:DiagnosticReport.conclusionCode.coding)
 
 # Class declaration
 Declaration(Class(:ReportOfThyroidDisease))
 AnnotationAssertion(dc:title :ReportOfThyroidDisease 
                   "Thyroid Disease Dx - disorder of the thyroid gland (sct:14304000)")
-EquivalentClasses(:ReportOfThyroidDisease ObjectSomeValuesFrom(fhir:DiagnosticReport.codedDiagnosis.coding sct:14304000))
+EquivalentClasses(:ReportOfThyroidDisease ObjectSomeValuesFrom(fhir:DiagnosticReport.conclusionCode.coding sct:14304000))
 
 )

@@ -30,14 +30,14 @@ Import(<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUME
 ######################## Target Diagnosis ###########################
 # Classifier Example -- DiagnosticReports have the codes for malignant neoplastic disease
 # Property chain for the actual coding
-Declaration(ObjectProperty(fhir:DiagnosticReport.codedDiagnosis.coding))
+Declaration(ObjectProperty(fhir:DiagnosticReport.conclusionCode.coding))
 SubObjectPropertyOf(
-  ObjectPropertyChain(fhir:DiagnosticReport.codedDiagnosis fhir:CodeableConcept.coding) fhir:DiagnosticReport.codedDiagnosis.coding)
+  ObjectPropertyChain(fhir:DiagnosticReport.conclusionCode fhir:CodeableConcept.coding) fhir:DiagnosticReport.conclusionCode.coding)
 
 # Class declaration
 Declaration(Class(:ReportWithCancerDiagnosis))
 AnnotationAssertion(dc:title :ReportWithCancerDiagnosis 
                   "The set of diagnoses that are instances of malignant neoplastic disease (sct:363346000)")
-EquivalentClasses(:ReportWithCancerDiagnosis ObjectSomeValuesFrom(fhir:DiagnosticReport.codedDiagnosis.coding sct:363346000))
+EquivalentClasses(:ReportWithCancerDiagnosis ObjectSomeValuesFrom(fhir:DiagnosticReport.conclusionCode.coding sct:363346000))
 
 )

@@ -58,7 +58,7 @@
      fhir:Reference.display [ fhir:value "HEAD and NECK CT DICOM imaging study" ]
   ];
   fhir:DiagnosticReport.conclusion [ fhir:value "CT brains: tumor of the left lobe of the thyroid gland."];
-  fhir:DiagnosticReport.codedDiagnosis [
+  fhir:DiagnosticReport.conclusionCode [
      fhir:index 0;
      fhir:CodeableConcept.coding [
        fhir:index 0;
