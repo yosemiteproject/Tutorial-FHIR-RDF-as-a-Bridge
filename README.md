@@ -106,12 +106,16 @@ repository in step 2 above.
 These files specify the kinds of diagnoses that we wish to identify,
 such as cancer or thyroid disease.
 
-* [cancerreport.ofn](cancerreport.ofn) -- class definition for `DiagnosticReport` having a diagnosis of [346325008: Malignant neoplastic disease](http://snomed.info/id/346325008)
-* [patientreport.ofn](patientreport.ofn) -- class definition for `DiagnosticReport` whose subject is a reference to a fhir:Patient
-* [finalreport.ofn](finalreport.ofn) -- class definition for `DiagnsosticReport` whose status meets a local definition of "finalized"
-* [finalreport_data.ofn](finalreport_data.ofn) -- class definition for `DiagnosticReport` whose stats **text** matches what we think counts as "finalized"
-* [fullreport.ofn](fullreport.ofn) -- class definition for a finalized `DiagnosticReport` on a patient with a cancer diagnosis
-* [thyroidreport.ofn](thyroidreport.ofn) -- class definition for `DiagnosticReport` having a diagnosis of [14304000: Disorder of thyroid gland (disorder)](http://snomed.info/id/14304000)
+* [fullreport.ofn](fullreport.ofn) -- Class definition for `:FinalPatientReportWithCancerDiagnosis`, which is a final patient report of cancer diagnosis.  This class is the intersection of three separately defined classes:
+** `:PatientReport` -- The class of patient reports, defined in [patientreport.ofn](patientreport.ofn)
+** `:FinalReport` -- The class of reports with a status that we consider final, defined in [patientreport.ofn](patientreport.ofn)
+** `:ReportWithCancerDiagnosis` -- The class of reports that have cancer diagnoses, defined in [finalreport.ofn](finalreport.ofn)
+a finalized `DiagnosticReport` on a patient with a cancer diagnosis
+* [patientreport.ofn](patientreport.ofn) -- Class definition for `:PatientReport`, i.e., reports whose subject is a fhir:Patient
+* [finalreport.ofn](finalreport.ofn) -- Class definition for `:FinalReport`, i.e., reports whose status meets our criteria for finalized
+* [cancerreport.ofn](cancerreport.ofn) -- Class definition for `:ReportWithCancerDiagnosis`, which are reports having a diagnosis of [346325008: Malignant neoplastic disease](http://snomed.info/id/346325008).
+* [thyroidreport.ofn](thyroidreport.ofn) -- Class definition for `:ReportOfThyroidDisease`, which are reports having a diagnosis of [14304000: Disorder of thyroid gland (disorder)](http://snomed.info/id/14304000).
+* [finalreport_text.ofn](finalreport_text.ofn) -- [Not used in this tutorial]  Class definition for `:FinalReport` whose status **text** matches what we think counts as "finalized".  This is a potential alternate way of defining the `:FinalReport` class.
 
 ### Instance data
 These files represent the FHIR medical reports that are to be analyzed to
