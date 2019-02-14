@@ -1,0 +1,4 @@
+95c95
+< fhir:w5.ttl  a           owl:Ontology ;
+---
+> <file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/w5.ttl>  a           owl:Ontology ;

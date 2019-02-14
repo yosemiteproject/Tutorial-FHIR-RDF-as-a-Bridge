@@ -57,6 +57,7 @@ If needed, resolve missing imports using these local files:
 ```
 snomed_cancer_subset.ttl
 fhir.ttl
+w5.ttl
 diagnosticreport-example-f201-brainct.ttl
 patientreport.ofn
 cancerreport.ofn
@@ -130,12 +131,16 @@ cancer or thyroid disease.
 ### Ontologies / vocabularies
 These are standard SNOMED-CT and FHIR ontologies/vocabularies that we
 have downloaded for use in this analysis.   Ideally these ontologies
-should be usable as-is.  However, as of this writing there are some
-exceptions, as described below.
+should be usable as-is.  However, a few modifications were made for
+this tutorial, as described below.
 
 * [codesystem-diagnostic-report-status.ttl](codesystem-diagnostic-report-status.ttl) -- proposed OWL representation of the `DiagnosticReport.status` code system.  This mini-ontology has not yet been standardized, but (as of this writing) the [FHIR/RDF group](http://wiki.hl7.org/index.php?title=ITS_RDF_ConCall_Agenda) is working toward generating it from the FHIR specification [build process](http://wiki.hl7.org/index.php?title=FHIR_Build_Process) as a standard downloadable ontology.
-* [fhir.ttl](fhir.ttl) -- FHIR Metadata vocabulary with offending `xsd:date`, `xsd:time`, `xsd:base64Binary` and `fhir:xhtml` data types changed to `xsd:dateTime` and `xsd:string`
-* [w5.ttl](w5.ttl) -- local copy of the FHIR 5 W's ontology -- [Who, What, When, Where, Why](https://www.hl7.org/fhir/fivews.html)
+* [fhir.ttl](fhir.ttl) -- FHIR (version R4) Metadata vocabulary downloaded from (here)[http://hl7.org/fhir/R4/fhir.rdf.ttl.zip], but with `xsd:base64Binary` datatype changed to `xsd:dateTime` (to prevent the reasoner from barfing) and ontology URIs changed to point to saved files on github.
+  * [fhir_ORIGINAL.ttl](fhir_ORIGINAL.ttl) -- Original version of the FHIR (version R4) Metadata vocabulary as download from (here)[http://hl7.org/fhir/R4/fhir.rdf.ttl.zip]
+  * [fhir_diffs.txt](fhir_diffs.txt) -- Differences between fhir_ORIGINAL.ttl and fhir.ttl
+* [w5.ttl](w5.ttl) -- FHIR (version R4) 5 W's ontology -- [Who, What, When, Where, Why](https://www.hl7.org/fhir/fivews.html) -- but with ontology URI changed to point to saved file on github.
+  * [w5_ORIGINAL.ttl](w5_ORIGINAL.ttl) -- Original version of the FHIR (version R4) 5 W's ontology, as downloaded from (here)[http://hl7.org/fhir/R4/fhir.rdf.ttl.zip].
+  * [w5_diffs.txt](w5_diffs.txt) -- Differences between w5_ORIGINAL.ttl and w5.ttl
 * [snomed_cancer_subset.ttl](snomed_cancer_subset.ttl) -- an OWL representation of the transitive closure and neighborhood of concepts:
   * [18834000: Malignant tumor if craniopharyngeal duct (disorder)](http://snomed.info/id/188340000)
   * [394914008: Radiology - speciality (qualifier value)](http://snomed.info/id/394914008)

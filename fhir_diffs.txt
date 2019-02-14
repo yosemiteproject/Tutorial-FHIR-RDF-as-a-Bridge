@@ -1,0 +1,92 @@
+1761c1761
+<                            owl:someValuesFrom  fhir:xhtml
+---
+>                            owl:someValuesFrom  xsd:string
+6212c6212
+< fhir:fhir.ttl  a        owl:Ontology ;
+---
+> <file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/fhir.ttl>  a        owl:Ontology ;
+6215c6215
+<         owl:imports     fhir:w5.ttl ;
+---
+>         owl:imports     <file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/w5.ttl> ;
+9723c9723
+<                            owl:allValuesFrom   fhir:base64Binary ;
+---
+>                            owl:allValuesFrom   fhir:string ;
+9728c9728
+<                            owl:allValuesFrom   fhir:base64Binary ;
+---
+>                            owl:allValuesFrom   fhir:string ;
+10626c10626
+<                            owl:allValuesFrom   fhir:base64Binary ;
+---
+>                            owl:allValuesFrom   fhir:string ;
+13555c13555
+<         rdfs:range          fhir:base64Binary ;
+---
+>         rdfs:range          fhir:string ;
+14271c14271
+<         rdfs:range          fhir:base64Binary ;
+---
+>         rdfs:range          fhir:string ;
+17441c17441
+<         rdfs:range    fhir:xhtml ;
+---
+>         rdfs:range    xsd:string ;
+19507c19507
+<         rdfs:range    fhir:base64Binary ;
+---
+>         rdfs:range    fhir:string ;
+19681c19681
+<                            owl:allValuesFrom   fhir:base64Binary ;
+---
+>                            owl:allValuesFrom   fhir:string ;
+28803c28803
+<         rdfs:range    fhir:base64Binary ;
+---
+>         rdfs:range    fhir:string ;
+32365c32365
+<                                             owl:allValuesFrom   fhir:base64Binary ;
+---
+>                                             owl:allValuesFrom   fhir:string ;
+39122c39122
+<         rdfs:range    fhir:base64Binary ;
+---
+>         rdfs:range    fhir:string ;
+44246c44246
+< fhir:base64Binary  a     owl:Class ;
+---
+> fhir:string  a     owl:Class ;
+44248c44248
+<         rdfs:label       "base64Binary" ;
+---
+>         rdfs:label       "string" ;
+44254c44254
+<                                                  owl:onDatatype  xsd:base64Binary
+---
+>                                                  owl:onDatatype  xsd:string
+48445c48445
+<         rdfs:range    fhir:base64Binary ;
+---
+>         rdfs:range    fhir:string ;
+57266c57266
+<         rdfs:range          fhir:base64Binary ;
+---
+>         rdfs:range          fhir:string ;
+58399c58399
+<         rdfs:range    fhir:base64Binary ;
+---
+>         rdfs:range    fhir:string ;
+65732c65732
+<                            owl:allValuesFrom   fhir:base64Binary ;
+---
+>                            owl:allValuesFrom   fhir:string ;
+72645c72645
+<                                             owl:someValuesFrom  fhir:base64Binary
+---
+>                                             owl:someValuesFrom  fhir:string
+78149c78149
+<                            owl:allValuesFrom   fhir:base64Binary ;
+---
+>                            owl:allValuesFrom   fhir:string ;
