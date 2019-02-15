@@ -89,7 +89,7 @@ This means that the reasoner has concluded that this patient record (f201)
 has a cancer diagnosis.  <br />
 ![Class Hierarchy Tab](images/f201-inferred.png)
 
-Next, we will test a different patient record for a thyroid disease diagnosis.
+   Next, we will test a different patient record for a thyroid disease diagnosis.
 
 9. Open [thyroidreport.ofn](thyroidreport.ofn), answering "no" to the current window prompt.
 Again, this file imports the ontologies that we need, imports the patient
