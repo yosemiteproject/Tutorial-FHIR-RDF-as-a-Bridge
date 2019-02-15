@@ -1636,7 +1636,7 @@ sct:94267001 a owl:Class ;
 # Modified to use a previously downloaded snapshot instead of downloading
 # the latest, to avoid version mismatch and 404s:
 # sctm:900000000000207008cancer_subset a owl:Ontology ;
-<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/snomed_cancer_subset.ttl> a owl:Ontology ;
+<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/snomed_cancer_subset.ttl> a owl:Ontology ;
     rdfs:label "SNOMED Clinical Terms (subset), International Release, US English Stated Relationships in OWL RDF" ;
     rdfs:comment """Copyright 2017 The International Health Terminology Standards Development Organisation (IHTSDO).
 All Rights Reserved. SNOMED CT was originally created by The College of American Pathologists. "SNOMED" and

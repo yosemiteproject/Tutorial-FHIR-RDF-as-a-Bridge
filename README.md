@@ -109,8 +109,7 @@ as an instance of thyroid disease.  <br />
 
 ## How it works
 To further understand how this demo works, examine the roles and contents of
-the files listed below.  These files were included when you cloned this 
-tutorial repository in step 2 above.
+the files listed below.  
 
 ### Class definitions
 These are OWL files we created to specify the kinds of diagnoses that we 
@@ -129,7 +128,14 @@ wish to identify, such as cancer or thyroid disease.
 ### Instance data
 These files represent the FHIR medical reports that are to be analyzed
 to determine whether they represent the target diagnosis, such as
-cancer or thyroid disease.
+cancer or thyroid disease.  They were originally downloaded from
+the [HL7 FHIR](https://www.hl7.org/fhir/) site, but snapshots of these
+files are included here to insure that this tutorial 
+will still work correctly even if those examples are moved or modified
+on the HL7 site.  For this reason, these files were modified to point to
+these github versions instead of pointing to the original versions on
+the HL7 site.  One way to see what lines were changed is to search 
+for the word "github" within these files.
 
 * [diagnosticreport-example-f201-brainct.ttl](diagnosticreport-example-f201-brainct.ttl) -- This report contains a diagnosis of [188340000: Malignant tumor of craniopharyngeal duct (disorder) ](http://snomed.info/id/188340000).  Using the SNOMED-CT ontology, the reasoner will conclude that this is a kind of cancer - a [363346000: Malignant neoplastic disease](http://snomed.info/id/363346000).
 * [diagnosticreport-example-dxreport117-thyroidtumor.ttl](diagnosticreport-example-dxreport117-thyroidtumor.ttl) -- This report contains a diagnosis of *Malignant tumor of left lobe of thyroid gland*
@@ -137,11 +143,12 @@ cancer or thyroid disease.
 * [imagingstudy-example-xr-mod.ttl](imagingstudy-example-xr_mod.ttl) -- Imaging study with sample laterality transformation
 
 ### Ontologies / vocabularies
-These are standard SNOMED-CT and FHIR ontologies/vocabularies that we
-have downloaded for use in this analysis.   Ideally these ontologies
+These are standard SNOMED-CT and FHIR ontologies/vocabularies that have
+been downloaded for use in this analysis.   Ideally these ontologies
 would be usable as-is after downloading them from the HL7 and IHTSDO websites.
 However, a few modifications were made for
-this tutorial, as described below.
+this tutorial, as described below, in addition to modifying
+URIs to point to these github versions.
 
 * [codesystem-diagnostic-report-status.ttl](codesystem-diagnostic-report-status.ttl) -- proposed OWL representation of the `DiagnosticReport.status` code system.  This mini-ontology was *not* downloaded from the HL7 site, because it has not yet been standardized as part of the FHIR release. However, the [FHIR/RDF group](http://wiki.hl7.org/index.php?title=ITS_RDF_ConCall_Agenda) is working toward including it in the FHIR release.  (It needs to be integrated into the FHIR specification [build process](http://wiki.hl7.org/index.php?title=FHIR_Build_Process) so that it is auto-generated and stays in sync with the rest of the FHIR specification.)  Once it is a part of the FHIR release it will be included in the [FHIR/RDF definitions](http://hl7.org/fhir/fhir.rdf.ttl.zip).
 * [fhir.ttl](fhir.ttl) -- FHIR (version R4) Metadata vocabulary included in the [FHIR/RDF definitions](http://hl7.org/fhir/R4/fhir.rdf.ttl.zip), but with: (a) the `xsd:base64Binary` datatype changed to `xsd:dateTime` (to prevent the reasoner from barfing on an unknown datatype); and (b) ontology URIs changed to point to saved snapshots on github, to ensure that this tutorial will continue to work even as FHIR and SNOMED-CT evolve.

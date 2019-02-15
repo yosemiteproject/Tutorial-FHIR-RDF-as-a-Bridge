@@ -27,7 +27,7 @@ diagnostic-report-status:cancelled
         skos:definition  "The report is unavailable because the measurement was not started or not completed (also sometimes called \"aborted\")." ;
         skos:prefLabel   "Cancelled" .
 
-<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/codesystem-diagnostic-report-status.ttl>
+<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/codesystem-diagnostic-report-status.ttl>
         a                owl:Ontology ;
         rdfs:comment     "The status of the diagnostic report as a whole." ;
         rdfs:label       "DiagnosticReportStatus" ;

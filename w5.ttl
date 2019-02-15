@@ -92,7 +92,7 @@ w5:why  a             owl:ObjectProperty ;
         rdfs:comment  "Why this work was done" ;
         rdfs:label    "why" .
 
-<file:///home/dbooth/personal/websites/yosemiteproject.org/OFFLINE-DOCUMENTS/git/Tutorial-FHIR-RDF-as-a-Bridge/w5.ttl>  a           owl:Ontology ;
+<https://raw.githubusercontent.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master/w5.ttl>  a           owl:Ontology ;
         rdfs:comment     "FHIR W5 categorization is a preliminary classification of the fhir property" ;
         rdfs:label       "W5 Categorization" ;
         owl:versionIRI   "http://build.fhir.org/w5.ttl" ;
