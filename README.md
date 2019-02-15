@@ -144,7 +144,8 @@ this tutorial, as described below.
   * [18834000: Malignant tumor if craniopharyngeal duct (disorder)](http://snomed.info/id/188340000)
   * [394914008: Radiology - speciality (qualifier value)](http://snomed.info/id/394914008)
   * [429858000: Computed tomography of head and neck (procedure)](http://snomed.info/id/429858000)
-     see [SNOMED_CT directory](SNOMED_CT) for description of how this was generated
+
+     See [SNOMED_CT directory](SNOMED_CT) for description of how this was generated
 * [snomed_thyroid_subset.ttl](snomed_thyroid_subset.ttl) -- An OWL representation of the transitive closure of:
     * [394914008:  Radiology - specialty (qualifier value)](http://snomed.info/id/394914008)
     * [429858000:  Computed tomography of head and neck (procedure)](http://snomed.info/id/429858000)
@@ -152,7 +153,8 @@ this tutorial, as described below.
     * [363698007:  Finding site (attribute)](http://snomed.info/id/363698007)
     * [170784008:  Entire left lobe of thyroid gland (body structure)](http://snomed.info/id/170784008)
     * [14304000:  Disorder of thyroid gland (disorder)](http://snomed.info/id/14304000)
-    see [SNOMED_CT directory](SNOMED_CT) for description of how this was generated
+
+    See [SNOMED_CT directory](SNOMED_CT) for description of how this was generated
 	
 	
 ### Misc.
