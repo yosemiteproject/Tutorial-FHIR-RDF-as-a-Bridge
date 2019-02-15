@@ -111,10 +111,9 @@ such as cancer or thyroid disease.
   * `:PatientReport` -- The class of patient reports, defined in [patientreport.ofn](patientreport.ofn)
   * `:FinalReport` -- The class of reports with a status that we consider final, defined in [finalreport.ofn](finalreport.ofn)
   * `:ReportWithCancerDiagnosis` -- The class of reports that have cancer diagnoses, defined in [cancerreport.ofn](cancerreport.ofn)
-a finalized `DiagnosticReport` on a patient with a cancer diagnosis
 * [patientreport.ofn](patientreport.ofn) -- Class definition for `:PatientReport`, i.e., reports whose subject is a fhir:Patient
 * [finalreport.ofn](finalreport.ofn) -- Class definition for `:FinalReport`, i.e., reports whose status meets our criteria for finalized
-* [cancerreport.ofn](cancerreport.ofn) -- Class definition for `:ReportWithCancerDiagnosis`, which are reports having a diagnosis of [346325008: Malignant neoplastic disease](http://snomed.info/id/346325008).
+* [cancerreport.ofn](cancerreport.ofn) -- Class definition for `:ReportWithCancerDiagnosis`, which are reports having a diagnosis of [363346000: Malignant neoplastic disease](http://snomed.info/id/363346000).
 * [thyroidreport.ofn](thyroidreport.ofn) -- Class definition for `:ReportOfThyroidDisease`, which are reports having a diagnosis of [14304000: Disorder of thyroid gland (disorder)](http://snomed.info/id/14304000).
 * [finalreport_text.ofn](finalreport_text.ofn) -- [Not used in this tutorial]  Class definition for `:FinalReport` whose status **text** matches what we think counts as "finalized".  This is a potential alternate way of defining the `:FinalReport` class.
 
