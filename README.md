@@ -131,7 +131,7 @@ These files represent the FHIR medical reports that are to be analyzed
 to determine whether they represent the target diagnosis, such as
 cancer or thyroid disease.
 
-* [diagnosticreport-example-f201-brainct.ttl](diagnosticreport-example-f201-brainct.ttl) -- This report contains a diagnosis of [188340000: Malignant tumor of craniopharyngeal duct (disorder) ](http://snomed.info/id/188340000)
+* [diagnosticreport-example-f201-brainct.ttl](diagnosticreport-example-f201-brainct.ttl) -- This report contains a diagnosis of [188340000: Malignant tumor of craniopharyngeal duct (disorder) ](http://snomed.info/id/188340000).  Using the SNOMED-CT ontology, the reasoner will conclude that this is a kind of cancer - a [363346000: Malignant neoplastic disease](http://snomed.info/id/363346000).
 * [diagnosticreport-example-dxreport117-thyroidtumor.ttl](diagnosticreport-example-dxreport117-thyroidtumor.ttl) -- This report contains a diagnosis of *Malignant tumor of left lobe of thyroid gland*
 * [imagingstudy-example-xr.ttl](imagingstudy-example-xr.ttl)
 * [imagingstudy-example-xr-mod.ttl](imagingstudy-example-xr_mod.ttl) -- Imaging study with sample laterality transformation
