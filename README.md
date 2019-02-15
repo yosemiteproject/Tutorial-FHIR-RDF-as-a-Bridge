@@ -47,7 +47,7 @@ Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ont
 
 3. Start Protege.  If you get an "Automatic Update" dialog, you may dismiss it
 by clicking "Not now".
-
+<br>
 ![Protege](images/automatic-update.png)
 ![Protege](images/protege.png)
 
