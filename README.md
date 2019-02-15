@@ -51,9 +51,7 @@ by clicking "Not now".
 This OWL file references a sample FHIR/RDF patient data record (f201.ttl)
 that we will identify as a cancer diagnosis, using the FaCT++ reasoner.  
 It also references the various FHIR and SNOMED-CT ontology pieces that enable 
-the reasoner to reach this conclusion.
-
-If needed, resolve missing imports using these local files:
+the reasoner to reach this conclusion.  If needed, resolve missing imports using these local files:
 ```
 snomed_cancer_subset.ttl
 fhir.ttl
@@ -70,12 +68,13 @@ finalreport.ofn
 6. Select the FaCT++ reasoner under the `Reasoner` menu.
 ![Select FaCT++](images/select-factpp-reasoner.png)
 
-7. Select `Start Reasoner` under the `Reasoner` menu.  It may take ~30
+7. Select `Start Reasoner` under the `Reasoner` menu.  It took ~30
 seconds to run on a 3.4GHz laptop.
 ![Start reasoner](images/start-reasoner.png)
 ![Reasoner progress](images/reasoner-progress.png)
+![Reasoner finished](images/reasoner-finished.png)
 
-8. Navigate to `FinalPatientReportWithCancerDiagnosis` in the `Classes`-->`Class hierarchy` tab and observe that `f201` (the id of the DiagnosticReport) has been recognized as an instance.  Success!
+8. After the reasoner has finished, navigate to `FinalPatientReportWithCancerDiagnosis` in the `Classes`-->`Class hierarchy` tab and observe that `f201` (the id of the DiagnosticReport) has been recognized as an instance.  Success!
 This means that the reasoner has concluded that this patient record (f201)
 has a cancer diagnosis.
 ![Class Hierarchy Tab](images/f201-inferred.png)
@@ -85,12 +84,12 @@ Next, we will test a different patient record for a thyroid disease diagnosis.
 9. Open [thyroidreport.ofn](thyroidreport.ofn), answering "no" to the current window prompt.
 Again, this file imports the ontologies that we need, imports the patient
 record that will be tested (diagnosticreport-example-dxreport117-thyroidtumor.ttl),
-and defines our target diagnosis class (:ReportOfThyroidDisease)
+and defines our target diagnosis class (`:ReportOfThyroidDisease`)
 as being anything classified in SNOMED-CT as a
-disorder of the thyroid gland (code sct:14304000).
+disorder of the thyroid gland (code [sct:14304000](http://snomed.info/id/14304000]).
 ![Class Hierarchy Tab](images/open-thyroid.png)
 
-10. Select `Start Reasoner` under the `Reasoner` menu.  It may take ~2 minutes
+10. Select `Start Reasoner` under the `Reasoner` menu.  It took ~2 minutes
 to run on a 3.4GHz laptop.
 ![Class Hierarchy Tab](images/thyroid-start-reasoner.png)
 
@@ -100,19 +99,19 @@ as an instance of thyroid disease.
 
 ## How it works
 To further understand how this demo works, examine the roles and contents of
-the files listed below.  These files were included when you cloned the 
-repository in step 2 above.
+the files listed below.  These files were included when you cloned this 
+tutorial repository in step 2 above.
 
 ### Class definitions
-These files specify the kinds of diagnoses that we wish to identify,
-such as cancer or thyroid disease.
+These are files we created to specify the kinds of diagnoses that we 
+wish to identify, such as cancer or thyroid disease.
 
-* [fullreport.ofn](fullreport.ofn) -- Class definition for `:FinalPatientReportWithCancerDiagnosis`, which is a final patient report of cancer diagnosis.  This class is the intersection of three separately defined classes:
-  * `:PatientReport` -- The class of patient reports, defined in [patientreport.ofn](patientreport.ofn)
-  * `:FinalReport` -- The class of reports with a status that we consider final, defined in [finalreport.ofn](finalreport.ofn)
-  * `:ReportWithCancerDiagnosis` -- The class of reports that have cancer diagnoses, defined in [cancerreport.ofn](cancerreport.ofn)
-* [patientreport.ofn](patientreport.ofn) -- Class definition for `:PatientReport`, i.e., reports whose subject is a fhir:Patient
-* [finalreport.ofn](finalreport.ofn) -- Class definition for `:FinalReport`, i.e., reports whose status meets our criteria for finalized
+* [fullreport.ofn](fullreport.ofn) -- Class definition for `:FinalPatientReportWithCancerDiagnosis`, which is a final patient report of cancer diagnosis.  This class is the intersection of three classes defined in separate files:
+  * `:PatientReport`
+  * `:FinalReport`
+  * `:ReportWithCancerDiagnosis`
+* [patientreport.ofn](patientreport.ofn) -- Class definition for `:PatientReport`, i.e., all reports whose subject is a fhir:Patient
+* [finalreport.ofn](finalreport.ofn) -- Class definition for `:FinalReport`, i.e., all reports whose status meets our criteria for finalized
 * [cancerreport.ofn](cancerreport.ofn) -- Class definition for `:ReportWithCancerDiagnosis`, which are reports having a diagnosis of [363346000: Malignant neoplastic disease](http://snomed.info/id/363346000).
 * [thyroidreport.ofn](thyroidreport.ofn) -- Class definition for `:ReportOfThyroidDisease`, which are reports having a diagnosis of [14304000: Disorder of thyroid gland (disorder)](http://snomed.info/id/14304000).
 * [finalreport_text.ofn](finalreport_text.ofn) -- [Not used in this tutorial]  Class definition for `:FinalReport` whose status **text** matches what we think counts as "finalized".  This is a potential alternate way of defining the `:FinalReport` class.
@@ -134,8 +133,8 @@ would be usable as-is after downloading them from the HL7 and IHTSDO websites.
 However, a few modifications were made for
 this tutorial, as described below.
 
-* [codesystem-diagnostic-report-status.ttl](codesystem-diagnostic-report-status.ttl) -- proposed OWL representation of the `DiagnosticReport.status` code system.  This mini-ontology was NOT downloaded from the HL7 site, because it has not yet been standardized as part of the FHIR release. However, the [FHIR/RDF group](http://wiki.hl7.org/index.php?title=ITS_RDF_ConCall_Agenda) is working toward including it in the FHIR release.  (It needs to be integrated into the FHIR specification [build process](http://wiki.hl7.org/index.php?title=FHIR_Build_Process) so that it is auto-generated and stays in sync with the rest of the FHIR specification.)  After that integration has been done, this mini-ontology will be included as part of the (FHIR/RDF definitions)[http://hl7.org/fhir/fhir.rdf.ttl.zip].
-* [fhir.ttl](fhir.ttl) -- FHIR (version R4) Metadata vocabulary included in the (FHIR/RDF definitions)[http://hl7.org/fhir/R4/fhir.rdf.ttl.zip], but with `xsd:base64Binary` datatype changed to `xsd:dateTime` (to prevent the reasoner from barfing) and ontology URIs changed to point to saved snapshots on github.
+* [codesystem-diagnostic-report-status.ttl](codesystem-diagnostic-report-status.ttl) -- proposed OWL representation of the `DiagnosticReport.status` code system.  This mini-ontology was *not* downloaded from the HL7 site, because it has not yet been standardized as part of the FHIR release. However, the [FHIR/RDF group](http://wiki.hl7.org/index.php?title=ITS_RDF_ConCall_Agenda) is working toward including it in the FHIR release.  (It needs to be integrated into the FHIR specification [build process](http://wiki.hl7.org/index.php?title=FHIR_Build_Process) so that it is auto-generated and stays in sync with the rest of the FHIR specification.)  Once it is a part of the FHIR release it will be included in the [FHIR/RDF definitions](http://hl7.org/fhir/fhir.rdf.ttl.zip).
+* [fhir.ttl](fhir.ttl) -- FHIR (version R4) Metadata vocabulary included in the (FHIR/RDF definitions)[http://hl7.org/fhir/R4/fhir.rdf.ttl.zip], but with: (a) the `xsd:base64Binary` datatype changed to `xsd:dateTime` (to prevent the reasoner from barfing on an unknown datatype); and (b) ontology URIs changed to point to saved snapshots on github, to ensure that this tutorial will continue to work even as FHIR and SNOMED-CT evolve.
   * [fhir_ORIGINAL.ttl](fhir_ORIGINAL.ttl) -- Original version of the FHIR (version R4) Metadata vocabulary as downloaded from the (FHIR/RDF definitions)[http://hl7.org/fhir/R4/fhir.rdf.ttl.zip]
   * [fhir_diffs.txt](fhir_diffs.txt) -- Differences between fhir_ORIGINAL.ttl and fhir.ttl
 * [w5.ttl](w5.ttl) -- FHIR (version R4) 5 W's ontology -- [Who, What, When, Where, Why](https://www.hl7.org/fhir/fivews.html) -- but with the ontology URI changed to point to a saved snapshot on github.
