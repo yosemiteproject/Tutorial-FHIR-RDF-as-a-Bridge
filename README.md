@@ -46,9 +46,10 @@ Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ont
    ```
 
 3. Start Protege.  If you get an "Automatic Update" dialog, you may dismiss it
-by clicking "Not now".  <br />
-![Protege](images/automatic-update.png)
-![Protege](images/protege.png)
+by clicking "Not now".  
+
+   ![Protege](images/automatic-update.png)
+   ![Protege](images/protege.png)
 
 4. Verify that the FaCT++ reasoner is installed: click the Reasoner menu
 to see if FaCT++ is listed.  If not, install it directly from Protege:
@@ -61,15 +62,15 @@ This OWL file references a sample FHIR/RDF patient data record (f201.ttl)
 that we will identify as a cancer diagnosis, using the FaCT++ reasoner.  
 It also references the various FHIR and SNOMED-CT ontology pieces that enable 
 the reasoner to reach this conclusion.  If needed, resolve missing imports using these local files:
-```
-snomed_cancer_subset.ttl
-fhir.ttl
-w5.ttl
-diagnosticreport-example-f201-brainct.ttl
-patientreport.ofn
-cancerreport.ofn
-finalreport.ofn
-```
+   ```
+   snomed_cancer_subset.ttl
+   fhir.ttl
+   w5.ttl
+   diagnosticreport-example-f201-brainct.ttl
+   patientreport.ofn
+   cancerreport.ofn
+   finalreport.ofn
+   ```
 ![Missing import](images/missing-import-cancer-subset.png)
 ![File selection for missing import](images/cancer-subset.png)
 ![Protege after successfully opening fullreport.ofn](images/protege-after-resolving-imports.png)
