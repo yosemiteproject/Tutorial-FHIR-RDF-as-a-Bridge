@@ -1,6 +1,6 @@
 # FHIR RDF as a Bridge to the Semantic Web in Healthcare
 
-This tutorial shows how FHIR RDF medical records using SNOMED-CT can be processed
+This tutorial shows how [FHIR RDF](https://www.hl7.org/fhir/rdf.html) medical records using SNOMED-CT can be processed
 by a reasoner to identify diagnoses that were not directly coded.  Two
 examples are demonstrated:
 a FHIR DiagnosticReport for malignant
@@ -29,8 +29,14 @@ Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ont
 * Familiarity with health informatics standards, including [SNOMED-CT](https://en.wikipedia.org/wiki/SNOMED_CT) and [HL7 FHIR](https://www.hl7.org/fhir/)
   
 ## Steps
-  
-1. Install a current version of [Protege](https://protege.stanford.edu/products.php).  This tutorial was tested on 5.5.0beta8 and 5.5.0beta9.
+
+1. Install a current version of [Protege](https://protege.stanford.edu/products.php).  This tutorial was tested on 5.5.0beta9.
+
+*For convenience we will use Protege with the FaCT++ reasoner to
+perform the inference that will identify a FHIR patient record as
+a cancer diagnosis.  However, if you 
+wanted to perform this inference in a production system you probably
+would not do it in Protege.*
 
 2. Clone a copy of [this repository](https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master), which contains the files for this tutorial, and change to that directory.
 
