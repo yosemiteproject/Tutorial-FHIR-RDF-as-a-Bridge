@@ -109,8 +109,8 @@ such as cancer or thyroid disease.
 
 * [fullreport.ofn](fullreport.ofn) -- Class definition for `:FinalPatientReportWithCancerDiagnosis`, which is a final patient report of cancer diagnosis.  This class is the intersection of three separately defined classes:
   * `:PatientReport` -- The class of patient reports, defined in [patientreport.ofn](patientreport.ofn)
-  * `:FinalReport` -- The class of reports with a status that we consider final, defined in [patientreport.ofn](patientreport.ofn)
-  * `:ReportWithCancerDiagnosis` -- The class of reports that have cancer diagnoses, defined in [finalreport.ofn](finalreport.ofn)
+  * `:FinalReport` -- The class of reports with a status that we consider final, defined in [finalreport.ofn](finalreport.ofn)
+  * `:ReportWithCancerDiagnosis` -- The class of reports that have cancer diagnoses, defined in [cancerreport.ofn](cancerreport.ofn)
 a finalized `DiagnosticReport` on a patient with a cancer diagnosis
 * [patientreport.ofn](patientreport.ofn) -- Class definition for `:PatientReport`, i.e., reports whose subject is a fhir:Patient
 * [finalreport.ofn](finalreport.ofn) -- Class definition for `:FinalReport`, i.e., reports whose status meets our criteria for finalized
