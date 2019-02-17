@@ -38,10 +38,10 @@ Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ont
    wanted to perform this inference in a production system you probably
    would not do it in Protege.*
 
-2. Clone a copy of [this repository](https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master), which contains the files for this tutorial, and change to that directory.
+2. Clone a copy of [this repository](https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge), which contains the files for this tutorial, and change to that directory.
 
    ```
-   git clone https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge/master
+   git clone https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge.git
    cd Tutorial-FHIR-RDF-as-a-Bridge/master
    ```
 
@@ -81,7 +81,6 @@ the reasoner to reach this conclusion.  If needed, resolve missing imports using
 7. Select `Start Reasoner` under the `Reasoner` menu.  It took ~30
 seconds to run on a 3.4GHz laptop.  <br />
 ![Start reasoner](images/start-reasoner.png)
-![Reasoner progress](images/reasoner-progress.png)
 ![Reasoner finished](images/reasoner-finished.png)
 
 8. After the reasoner has finished, navigate to `FinalPatientReportWithCancerDiagnosis` in the `Classes`-->`Class hierarchy` tab and observe that `f201` (the id of the DiagnosticReport) has been recognized as an instance.  Success!
