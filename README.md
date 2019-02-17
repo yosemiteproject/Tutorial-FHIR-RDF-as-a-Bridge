@@ -27,37 +27,36 @@ Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ont
 ## Prerequisites
 * Familiarity with semantic web technologies and standards, including [OWL](http://www.w3.org/TR/owl-primer), [RDF](https://www.w3.org/TR/rdf11-primer/), and the [Protege ontology editor](https://protege.stanford.edu/)
 * Familiarity with health informatics standards, including [SNOMED-CT](https://en.wikipedia.org/wiki/SNOMED_CT) and [HL7 FHIR](https://www.hl7.org/fhir/)
-  
-## Steps
-
-1. Install a current version of [Protege](https://protege.stanford.edu/products.php).  This tutorial was tested on 5.5.0beta9.
+* A current version of [Protege](https://protege.stanford.edu/products.php).  This tutorial was tested on 5.5.0beta9.
 
    *For convenience we will use Protege with the FaCT++ reasoner to
    perform the inference that will identify a FHIR patient record as
    a cancer diagnosis.  However, if you 
    wanted to perform this inference in a production system you probably
    would not do it in Protege.*
+  
+## Steps
 
-2. Clone a copy of [this repository](https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge), which contains the files for this tutorial, and change to that directory.
+1. Clone a copy of [this repository](https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge), which contains the files for this tutorial, and change to that directory.
 
    ```
    git clone https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge.git
    cd Tutorial-FHIR-RDF-as-a-Bridge
    ```
 
-3. Start Protege.  If you get an "Automatic Update" dialog, you may dismiss it
+2. Start Protege.  If you get an "Automatic Update" dialog, you may dismiss it
 by clicking "Not now".  
 
    ![Protege](images/automatic-update.png)
    ![Protege](images/protege.png)
 
-4. Verify that the FaCT++ reasoner is installed: click the Reasoner menu
+3. Verify that the FaCT++ reasoner is installed: click the Reasoner menu
 to see if FaCT++ is listed.  If not, install it directly from Protege:
 File-->Check for plugins..., check "FaCT++ reasoner", Install, then exit
 and restart Protege.  <br />
 ![Reasoner menu](images/reasoner-menu.png)
 
-5. Open [fullreport.ofn](fullreport.ofn): File-->Open.
+4. Open [fullreport.ofn](fullreport.ofn): File-->Open.
 This OWL file references a sample FHIR/RDF patient data record (f201.ttl)
 that we will identify as a cancer diagnosis, using the FaCT++ reasoner.  
 It also references the various FHIR and SNOMED-CT ontology pieces that enable 
@@ -75,22 +74,22 @@ the reasoner to reach this conclusion.  If needed, resolve missing imports using
 ![File selection for missing import](images/cancer-subset.png)
 ![Protege after successfully opening fullreport.ofn](images/protege-after-resolving-imports.png)
 
-6. Select the FaCT++ reasoner under the `Reasoner` menu.  <br />
+5. Select the FaCT++ reasoner under the `Reasoner` menu.  <br />
 ![Select FaCT++](images/select-factpp-reasoner.png)
 
-7. Select `Start Reasoner` under the `Reasoner` menu.  It took ~30
+6. Select `Start Reasoner` under the `Reasoner` menu.  It took ~30
 seconds to run on a 3.4GHz laptop.  <br />
 ![Start reasoner](images/start-reasoner.png)
 ![Reasoner finished](images/reasoner-finished.png)
 
-8. After the reasoner has finished, navigate to `FinalPatientReportWithCancerDiagnosis` in the `Classes`-->`Class hierarchy` tab and observe that `f201` (the id of the DiagnosticReport) has been recognized as an instance.  Success!
+7. After the reasoner has finished, navigate to `FinalPatientReportWithCancerDiagnosis` in the `Classes`-->`Class hierarchy` tab and observe that `f201` (the id of the DiagnosticReport) has been recognized as an instance.  Success!
 This means that the reasoner has concluded that this patient record (f201)
 has a cancer diagnosis.  <br />
 ![Class Hierarchy Tab](images/f201-inferred.png)
 
    Next, we will test a different patient record for a thyroid disease diagnosis.
 
-9. Open [thyroidreport.ofn](thyroidreport.ofn), answering "no" to the current window prompt.
+8. Open [thyroidreport.ofn](thyroidreport.ofn), answering "no" to the current window prompt.
 Again, this file imports the ontologies that we need, imports the patient
 record that will be tested (diagnosticreport-example-dxreport117-thyroidtumor.ttl),
 and defines our target diagnosis class (`:ReportOfThyroidDisease`)
@@ -98,11 +97,11 @@ as being anything classified in SNOMED-CT as a
 disorder of the thyroid gland (code [sct:14304000](http://snomed.info/id/14304000]).  <br />
 ![Class Hierarchy Tab](images/open-thyroid.png)
 
-10. Select `Start Reasoner` under the `Reasoner` menu.  It took ~2 minutes
+9. Select `Start Reasoner` under the `Reasoner` menu.  It took ~2 minutes
 to run on a 3.4GHz laptop.  <br />
 ![Class Hierarchy Tab](images/thyroid-start-reasoner.png)
 
-11. Navigate to `ReportOfThyroidDisease` in the `Class Hierarchy` tab and observe that `dxreport117` has been classified
+10. Navigate to `ReportOfThyroidDisease` in the `Class Hierarchy` tab and observe that `dxreport117` has been classified
 as an instance of thyroid disease.  <br />
 ![Class Hierarchy Tab](images/dxreport117-inferred.png)
 
