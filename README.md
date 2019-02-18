@@ -21,8 +21,6 @@ This tutorial is based on a
 and a [paper from the 2017 International SWAT4HCLS Conference](http://www.swat4ls.org/wp-content/uploads/2017/11/SWAT4LS-2017_paper_28.pdf)
 by Harold R. Solbrig of Mayo Clinic.  
 
-[*Watch the video of this tutorial (90 seconds)*](https://youtu.be/NjNdo0GyieU)
-
 ## Target audience
 Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ontology.
 
@@ -38,6 +36,8 @@ Anyone interested in using FHIR/RDF to perform inference using the SNOMED-CT ont
    would not do it in Protege.*
   
 ## Steps
+
+[*Watch the video of this tutorial (90 seconds)*](https://youtu.be/NjNdo0GyieU)
 
 1. Clone a copy of [this repository](https://github.com/yosemiteproject/Tutorial-FHIR-RDF-as-a-Bridge), which contains the files for this tutorial, and change to that directory.
 
