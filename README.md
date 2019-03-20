@@ -1,4 +1,10 @@
-# Tutorial: FHIR RDF as a Bridge to the Semantic Web in Healthcare
+<p align="center">
+  <a href="http://yosemiteproject.org/">
+    <img src="http://yosemiteproject.org/wp-content/uploads/2016/09/logo1.jpg" alt="Yosemite logo" width="72" height="72">
+  </a>
+</p>
+
+<h3 align="center">Tutorial: FHIR RDF as a Bridge to the Semantic Web in Healthcare</h3>
 
 This tutorial shows how [FHIR RDF](https://www.hl7.org/fhir/rdf.html) medical records using SNOMED-CT codes can be processed
 by a reasoner to identify diagnoses that were not directly coded.  Two
