@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://yosemiteproject.org/">
-    <img src="http://yosemiteproject.org/wp-content/uploads/2016/09/logo1.jpg" alt="Yosemite logo" width="102" height="122">
+    <img src="http://yosemiteproject.org/wp-content/uploads/2016/09/logo1.jpg" alt="Yosemite logo" width="102" height="132">
   </a>
 </p>
 
