@@ -4,8 +4,6 @@
   </a>
 </p>
 
-<h3 align="center">Tutorial: FHIR RDF as a Bridge to the Semantic Web in Healthcare</h3>
-
 This tutorial shows how [FHIR RDF](https://www.hl7.org/fhir/rdf.html) medical records using SNOMED-CT codes can be processed
 by a reasoner to identify diagnoses that were not directly coded.  Two
 examples are demonstrated:
