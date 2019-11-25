@@ -62,10 +62,11 @@ File-->Check for plugins..., check "FaCT++ reasoner", Install, then exit
 and restart Protege.  <br />
 ![Reasoner menu](images/reasoner-menu.png)
 
+<i>NOTE 25-11-2019: A user has reported: "The default preferences in Protégé d't display inferred instances, so you might want to add a note to change that after installing or users will never see classified instances."</i>
+
 4. Open [fullreport.ofn](fullreport.ofn): File-->Open.
 This OWL file references a sample FHIR/RDF patient data record (f201.ttl)
-that we will identify as a cancer diagnosis, using the FaCT++ reasoner.  
-It also references the various FHIR and SNOMED-CT ontology pieces that enable 
+that we will identify as a cancer diagnosis, using the FaCT++ reasoner.  It also references the various FHIR and SNOMED-CT ontology pieces that enable 
 the reasoner to reach this conclusion.  If needed, resolve missing imports using these local files:
    ```
    snomed_cancer_subset.ttl
@@ -114,6 +115,7 @@ as an instance of thyroid disease.  <br />
 ## How it works
 To further understand how this demo works, examine the roles and contents of
 the files listed below.  
+![Class Inference](images/FinalPatientReportWithCancerDiagnosis.png)
 
 ### Class definitions
 These are OWL files we created to specify the kinds of diagnoses that we 
@@ -150,7 +152,7 @@ for the word "github" within these files.
 These are standard SNOMED-CT and FHIR ontologies/vocabularies that have
 been downloaded for use in this analysis.   Ideally these ontologies
 would be usable as-is after downloading them from the HL7 and IHTSDO websites.
-However, a few modifications were made for
+However, a few local modifications were made for
 this tutorial, as described below, in addition to modifying
 URIs to point to these github versions.
 
