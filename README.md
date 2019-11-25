@@ -62,7 +62,7 @@ File-->Check for plugins..., check "FaCT++ reasoner", Install, then exit
 and restart Protege.  <br />
 ![Reasoner menu](images/reasoner-menu.png)
 
-<i>NOTE 25-11-2019: A user has reported: "The default preferences in Protégé d't display inferred instances, so you might want to add a note to change that after installing or users will never see classified instances."</i>
+*NOTE 25-11-2019: A user has reported: "The default preferences in Protege don't display inferred instances, so you might want to add a note to change that after installing or users will never see classified instances."*
 
 4. Open [fullreport.ofn](fullreport.ofn): File-->Open.
 This OWL file references a sample FHIR/RDF patient data record (f201.ttl)
